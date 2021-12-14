@@ -1,12 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package tabela_nba;
 
 /**
  *
  * @author artur
+ * @author vinicius
  */
 public class Tabela_NBA {
 
@@ -14,7 +12,7 @@ public class Tabela_NBA {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
     
 }
