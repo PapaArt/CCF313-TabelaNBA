@@ -35,7 +35,7 @@ public class Tabela_NBA {
         System.out.print("Time 2: ");
         int time2 = scan.nextInt();
         
-        System.out.println("O confronto eh: "+nomesTimes[time1-1]+" contra "+nomesTimes[time2-1]);
+        System.out.println("O confronto eh: "+nomesTimes[time1-1]+" vs "+nomesTimes[time2-1]);
         
         
         
