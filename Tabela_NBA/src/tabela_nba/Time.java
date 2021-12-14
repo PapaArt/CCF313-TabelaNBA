@@ -1,6 +1,8 @@
 
 package tabela_nba;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author vinicius
@@ -8,6 +10,8 @@ package tabela_nba;
 public class Time {
     private String nomeTime;
     
+    
+    DecimalFormat formatador = new DecimalFormat("0.000");
     //conferência: 0 para Leste 1 para Oeste
     private int conferencia;
     private int vitorias;
@@ -33,10 +37,19 @@ public class Time {
     }
     
     public void defineConferencia(int conferenciaTime){
-        if(conferenciaTime != 0 || conferenciaTime != 1 ){
-            System.err.println("");
+        switch (conferenciaTime) {
+            case 0:
+                this.conferencia = conferenciaTime;
+                System.out.println("Conferencia Oeste");
+                break;
+            case 1:
+                this.conferencia = conferenciaTime;
+                System.out.println("Conferencia Leste");
+                break;
+            default:
+                System.err.println("Conferência invalida!!!");
+                break;
         }
-        this.conferencia = 1;
     }
     
     public int ganhou(){
@@ -60,5 +73,7 @@ public class Time {
         return this.jogos;
     }
     
-    
+    public double mediaDePontos(){
+        return this.pontosPorJogo/this.jogos;
+    } 
 }
