@@ -28,6 +28,5 @@ public class Tabela_NBA {
         System.out.println("O confronto eh: "+nomesTimes[time1-1]+" vs "+nomesTimes[time2-1]);
         
         
-        
     }
 }
