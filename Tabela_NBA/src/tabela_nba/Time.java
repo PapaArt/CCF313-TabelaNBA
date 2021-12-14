@@ -10,7 +10,6 @@ import java.text.DecimalFormat;
 public class Time {
     private String nomeTime;
     
-    
     DecimalFormat formatador = new DecimalFormat("0.000");
     //conferência: 0 para Leste 1 para Oeste
     private int conferencia;
@@ -23,6 +22,8 @@ public class Time {
     private double porcentagemVitoria;
     private double pontosPorJogo;
     
+    private int posicao;
+    
     public void iniciarTime(){
         this.nomeTime = "";
         this.conferencia = 0;
@@ -30,6 +31,7 @@ public class Time {
         this.derrotas = 0;
         this.jogos = 0; 
         this.pontosPorJogo = 0;
+        this.posicao = 0;
     }
     
     public void defineNomeTime(String time){
@@ -76,4 +78,8 @@ public class Time {
     public double mediaDePontos(){
         return this.pontosPorJogo/this.jogos;
     } 
+    
+    public int posicaoTabela(){
+        return this.posicao;
+    }
 }

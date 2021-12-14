@@ -7,6 +7,6 @@ package tabela_nba;
  */
 public class Principal {
     public static void main(String[] args) {
-        
+        Time time = new Time();
     }
 }
