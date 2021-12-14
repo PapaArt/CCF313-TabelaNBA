@@ -13,9 +13,6 @@ public class Tabela_NBA {
         Scanner scan = new Scanner(System.in);
         String nomesTimes[] = {"Golden State Warriors","Boston Celtics","Brooklyn Nets","Los Angeles Lakers"};
         
-       
-        
-        
         System.out.println("Indique o confronto:");
         System.out.println("1 para: "+nomesTimes[0]);
         System.out.println("2 para: "+nomesTimes[1]);
