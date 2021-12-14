@@ -1,6 +1,7 @@
 
 package tabela_nba;
 
+import java.util.Scanner;
 /**
  *
  * @author artur
