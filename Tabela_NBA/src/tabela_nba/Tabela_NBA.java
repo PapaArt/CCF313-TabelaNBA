@@ -13,14 +13,7 @@ public class Tabela_NBA {
         Scanner scan = new Scanner(System.in);
         String nomesTimes[] = {"Golden State Warriors","Boston Celtics","Brooklyn Nets","Los Angeles Lakers"};
         
-        //conferência: 0 para Leste 1 para Oeste
-        int conferencia = 0;
-        
-        int vitorias = 0;
-        int derrotas = 0;
-        int jogosAtras = 0; // 0 = sem jogos atrás
-        
-        double porcentagemVitoria = 0;
+       
         
         
         System.out.println("Indique o confronto:");
