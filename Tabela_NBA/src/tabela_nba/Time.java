@@ -17,6 +17,7 @@ public class Time {
     //private int jogosAtras; // 0 = sem jogos atrás
         
     private double porcentagemVitoria;
+    private double pontosPorJogo;
     
     public void iniciarTime(){
         this.nomeTime = "";
@@ -24,14 +25,18 @@ public class Time {
         this.vitorias = 0;
         this.derrotas = 0;
         this.jogos = 0; 
+        this.pontosPorJogo = 0;
     }
     
-    public void conferenciaLeste(){
+    public void defineNomeTime(String time){
+        this.nomeTime = time;
+    }
+    
+    public void defineConferencia(int conferenciaTime){
+        if(conferenciaTime != 0 || conferenciaTime != 1 ){
+            System.err.println("");
+        }
         this.conferencia = 1;
-    }
-    
-    public void conferenciaOeste(){
-        this.conferencia = 0;
     }
     
     public int ganhou(){
@@ -50,6 +55,10 @@ public class Time {
         return this.porcentagemVitoria;
     }
     
+    public int numeroJogos(){
+        this.jogos = this.vitorias + this.derrotas;
+        return this.jogos;
+    }
     
     
 }
