@@ -22,6 +22,7 @@ public class Time {
     private double pontosPorJogo;
     
     private int posicao;
+
     
     public void iniciarTime(){
         this.nomeTime = "";
