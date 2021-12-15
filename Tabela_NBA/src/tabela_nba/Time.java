@@ -11,8 +11,7 @@ public class Time {
     private String nomeTime;
     
     DecimalFormat formatador = new DecimalFormat("0.000");
-    //conferência: 0 para Leste 1 para Oeste
-    private int conferencia;
+    
     private int vitorias;
     private int derrotas;
     
@@ -26,7 +25,6 @@ public class Time {
     
     public void iniciarTime(){
         this.nomeTime = "";
-        this.conferencia = 0;
         this.vitorias = 0;
         this.derrotas = 0;
         this.jogos = 0; 
@@ -37,23 +35,7 @@ public class Time {
     public void defineNomeTime(String time){
         this.nomeTime = time;
     }
-    
-    public void defineConferencia(int conferenciaTime){
-        switch (conferenciaTime) {
-            case 0:
-                this.conferencia = conferenciaTime;
-                System.out.println("Conferencia Oeste");
-                break;
-            case 1:
-                this.conferencia = conferenciaTime;
-                System.out.println("Conferencia Leste");
-                break;
-            default:
-                System.err.println("Conferência invalida!!!");
-                break;
-        }
-    }
-    
+        
     public int ganhou(){
         this.vitorias += 1;
         return this.vitorias;
