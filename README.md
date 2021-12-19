@@ -10,7 +10,7 @@ Na tabela irão constar dados como o resultado das partidas, tabela de classific
   <li> Criação das classes "Time" e "Tabela_NBA" </li>
   <ul> 
     <li>  Definição dos métodos a serem utilizados futuramente </li>
-    <li>  Funções básicas relacionadas aos times (defineNomeTime, posicaoTabela...) e a tabela(ordenaPosicao, classificacao...) </li>
+    <li>  Funções básicas relacionadas aos times (defineNomeTime, posicaoTabela...) e a tabela (ordenaPosicao, classificacao...) </li>
   </ul>
   
   <li> Testes para identificação de problemas </li>
