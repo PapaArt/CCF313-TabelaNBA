@@ -24,8 +24,8 @@ public class Time {
     private int posicao;
 
     
-    public void iniciarTime(){
-        this.nomeTime = "";
+    public Time(String nomeTime){
+        this.nomeTime = nomeTime;
         this.vitorias = 0;
         this.derrotas = 0;
         this.jogos = 0; 
