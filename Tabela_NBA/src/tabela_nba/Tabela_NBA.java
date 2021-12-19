@@ -11,8 +11,7 @@ public class Tabela_NBA {
     
     Scanner scan = new Scanner(System.in);  
     //Time time1,time2;
-    Time[] times = new Time[30];
-    
+    Time[] times = new Time[2];
     private int quantidadeJogos;
     //conferência: 1 para Leste / 0 para Oeste
     
@@ -66,5 +65,29 @@ public class Tabela_NBA {
         if(times[0].getPorcentagemVitoria() > times[1].getPorcentagemVitoria()){
             times[0].setPosicao(1);
         }  
+    }
+    
+    public void insertionSort(Time times[]){
+        int n = times.length;
+        Time[] copiaTimes = times.clone();
+        
+        for (int i = 1; i < n; i++){
+            double key = times[i].getPorcentagemVitoria();
+            copiaTimes[i] = times[i];
+            int j = i - 1;
+            
+            while (j >= 0 && times[j].getPorcentagemVitoria() < key){
+                times[j+1] = times[j];
+                j = j - 1;
+            }
+            times[j+1] = copiaTimes[i];
+        }
+    }
+    
+    public void printArray(Time times[]){
+        int n = times.length;
+        for (int i = 0; i < n; i++){
+            System.out.println(times[i].getNomeTime() + "\n");
+        }
     }
 }
