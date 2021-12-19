@@ -10,12 +10,13 @@ import java.util.Scanner;
 public class Tabela_NBA {
     
     Scanner scan = new Scanner(System.in);  
-    Time time1,time2;
+    //Time time1,time2;
+    Time[] times = new Time[30];
     
     private int quantidadeJogos;
     //conferência: 1 para Leste / 0 para Oeste
     
-    private String[] nomesTimes = new String[15]; //implementar depois
+    private String nomesTimes; //implementar depois
     
         
     enum Conferencia{
@@ -25,10 +26,8 @@ public class Tabela_NBA {
     private Conferencia conferencia;
     
     public Tabela_NBA(Conferencia nome){
-        nomesTimes[0] = "Bulls";
-        nomesTimes[1] = "Lakers";
-        time1 = new Time(nomesTimes[0]);
-        time2 = new Time(nomesTimes[1]);
+        times[0] = new Time("Bulls");
+        times[1] = new Time("Lakers");
         this.conferencia = nome;
 //        for (int i = 0; i < 15; i++) {
 //            this.nomesTimes[i] = "";
@@ -43,7 +42,7 @@ public class Tabela_NBA {
         return quantidadeJogos;
     }
 
-    public String[] getNomesTimes() {
+    public String getNomesTimes() {
         return nomesTimes;
     }
 
@@ -52,7 +51,7 @@ public class Tabela_NBA {
     }
 
     public void setQuantidadeJogos() {
-        this.quantidadeJogos = time1.getJogos();
+        this.quantidadeJogos = times[0].getJogos();
     }
 
 //    public void setNomesTimes(String[] nomesTimes) {
@@ -64,11 +63,8 @@ public class Tabela_NBA {
     }
     
     public void setPosicao(int posicao) {
-        if(time1.getPorcentagemVitoria() > time2.getPorcentagemVitoria()){
-            time1.setPosicao(1);
-        }
-  
+        if(times[0].getPorcentagemVitoria() > times[1].getPorcentagemVitoria()){
+            times[0].setPosicao(1);
+        }  
     }
-    
-
 }
