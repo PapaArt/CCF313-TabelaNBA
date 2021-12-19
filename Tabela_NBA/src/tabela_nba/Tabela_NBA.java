@@ -43,4 +43,25 @@ public class Tabela_NBA {
         return quantidadeJogos;
     }
 
+    public int getQuantidadeJogos() {
+        return quantidadeJogos;
+    }
+
+    public String[] getNomesTimes() {
+        return nomesTimes;
+    }
+
+    public Conferencia getConferencia() {
+        return conferencia;
+    }
+
+    public void setQuantidadeJogos(int quantidadeJogos) {
+        this.quantidadeJogos = quantidadeJogos;
+    }
+
+    public void setNomesTimes(String[] nomesTimes) {
+        this.nomesTimes = nomesTimes;
+    }
+    
+
 }
