@@ -65,4 +65,53 @@ public class Time {
     public int posicaoTabela(){
         return this.posicao;
     }
+
+    public String getNomeTime() {
+        return nomeTime;
+    }
+
+    public int getVitorias() {
+        return vitorias;
+    }
+
+    public int getDerrotas() {
+        return derrotas;
+    }
+
+    public int getJogos() {
+        return jogos;
+    }
+
+    public double getPorcentagemVitoria() {
+        return porcentagemVitoria;
+    }
+
+    public double getPontosPorJogo() {
+        return pontosPorJogo;
+    }
+
+    public int getPosicao() {
+        return posicao;
+    }
+
+    public void setVitorias(int vitorias) {
+        this.vitorias = vitorias;
+    }
+
+    public void setDerrotas(int derrotas) {
+        this.derrotas = derrotas;
+    }
+
+    public void setJogos(int jogos) {
+        this.jogos = jogos;
+    }
+
+    public void setPorcentagemVitoria(double porcentagemVitoria) {
+        this.porcentagemVitoria = porcentagemVitoria;
+    }
+
+    public void setPosicao(int posicao) {
+        this.posicao = posicao;
+    }
+    
 }
