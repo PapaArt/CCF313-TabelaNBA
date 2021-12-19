@@ -42,6 +42,9 @@ public class Principal {
         System.out.println("Porcentagem de vitoria time 2: " + (tabela.times[1].getPorcentagemVitoria())* 100 + "%");
         System.out.println("Pontos totais time 2: "+ PONTOSTOTAIS_TIME2);
         System.out.println("Media pontos por jogo time 2: "+ tabela.times[1].getPontosPorJogo());
+        System.out.println();
+        tabela.insertionSort(tabela.times);
+        tabela.printArray(tabela.times);
         
     }
 }
