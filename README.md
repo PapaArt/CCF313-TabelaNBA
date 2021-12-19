@@ -19,4 +19,4 @@ Na tabela irão constar dados como o resultado das partidas, tabela de classific
     <li> Método para ordenação baseado na porcentagem de vitórias </li>
   </ul>
   
-![basketball-player](https://user-images.githubusercontent.com/48726318/146690434-2a3822ee-a554-4adf-83e3-446058600c32.png)
+![basketball-player](https://user-images.githubusercontent.com/48726318/146690434-2a3822ee-a554-4adf-83e3-446058600c32.png = 100x20)
