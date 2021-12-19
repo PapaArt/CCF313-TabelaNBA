@@ -62,6 +62,10 @@ public class Tabela_NBA {
     public void setNomesTimes(String[] nomesTimes) {
         this.nomesTimes = nomesTimes;
     }
+
+    public void setConferencia(Conferencia conferencia) {
+        this.conferencia = conferencia;
+    }
     
 
 }
