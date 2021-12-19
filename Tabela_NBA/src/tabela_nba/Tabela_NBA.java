@@ -93,7 +93,7 @@ public class Tabela_NBA {
         }
         
         System.out.println("CLASSIFICACAO ");
-        System.out.println("Times   V   D   %VIT    PPJ");
+        System.out.println("Times    V D %VIT  PPJ");
         
         for (int i = 0; i < n; i++){
             System.out.print(+(times[i].getPosicao() + 1) + " ");
