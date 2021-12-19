@@ -6,7 +6,8 @@ Projeto de desenvolvimento de uma tabela de jogos da NBA com o propósito de ana
 Na tabela irão constar dados como o resultado das partidas, tabela de classificação, pontos por jogo, rebotes por jogo, entre outros.
  
  
-<ul> Progresso feito até o dia 19/12 👇🏼👇🏼👇🏼
+<ul> Progresso feito até o dia 19/12:
+      👇🏼👇🏼👇🏼
   <li> Criação das classes "Time" e "Tabela_NBA" </li>
   <ul> 
     <li>  Definição dos métodos a serem utilizados futuramente </li>
