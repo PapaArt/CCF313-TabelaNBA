@@ -87,7 +87,7 @@ public class Tabela_NBA {
     public void printArray(Time times[]){
         int n = times.length;
         for (int i = 0; i < n; i++){
-            System.out.println(times[i].getNomeTime() + "\n");
+            System.out.println(times[i].getNomeTime() + "");
         }
     }
 }
