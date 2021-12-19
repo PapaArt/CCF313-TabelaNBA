@@ -20,15 +20,17 @@ public class Principal {
         tabela.time2.setDerrotas(3);
         
         System.out.println("Nome time 1: "+tabela.time1.getNomeTime());
-        System.out.println("Nome time 2: "+tabela.time2.getNomeTime());
         System.out.println();
         System.out.println("get vitorias time 1: " +tabela.time1.getVitorias());
+        System.out.println("get derrotas time 1: " +tabela.time1.getDerrotas());
         System.out.println("get jogos time 1: "+tabela.time1.getJogos());
         System.out.println("Porcentagem de vitoria time 1: " + (tabela.time1.getPorcentagemVitoria())* 100 + "%");
         System.out.println();
-        System.out.println("get vitorias time 1: " +tabela.time2.getVitorias());
-        System.out.println("get jogos time 1: "+tabela.time2.getJogos());
-        System.out.println("Porcentagem de vitoria time 1: " + (tabela.time2.getPorcentagemVitoria())* 100 + "%");
+         System.out.println("Nome time 2: "+tabela.time2.getNomeTime());
+        System.out.println("get vitorias time 2: " +tabela.time2.getVitorias());
+        System.out.println("get derrotas time 2: " +tabela.time2.getDerrotas());
+        System.out.println("get jogos time 2: "+tabela.time2.getJogos());
+        System.out.println("Porcentagem de vitoria time 2: " + (tabela.time2.getPorcentagemVitoria())* 100 + "%");
         
     }
 }
