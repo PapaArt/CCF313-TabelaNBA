@@ -63,7 +63,7 @@ public class Time {
     }
 
     public double getPontosPorJogo() {
-        return this.pontosPorJogo/this.jogos;
+        return this.pontosPorJogo;
     }
 
     public int getPosicao() {
@@ -86,6 +86,11 @@ public class Time {
 //
     public void setPosicao(int posicao) {
         this.posicao = posicao;
+    }
+
+    public void setPontosPorJogo(double pontosTotais) {
+        
+        this.pontosPorJogo = pontosTotais/this.jogos;
     }
    
 }
