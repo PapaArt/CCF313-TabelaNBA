@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Tabela_NBA {
     
     Scanner scan = new Scanner(System.in);  
-    private Time time1;
+    Time time1;
     
     private int quantidadeJogos;
     //conferência: 1 para Leste / 0 para Oeste
@@ -25,12 +25,12 @@ public class Tabela_NBA {
     private Conferencia conferencia;
     
     public Tabela_NBA(){
-        time1 = new Time();
+        time1 = new Time(nomesTimes[0]);
         this.quantidadeJogos = 0;
         this.conferencia = conferencia.LESTE;
-        for (int i = 0; i < 15; i++) {
-            this.nomesTimes[i] = "";
-        }
+//        for (int i = 0; i < 15; i++) {
+//            this.nomesTimes[i] = "";
+//        }
     }
     
     public void mudarConferencia(Conferencia novaConferencia){
