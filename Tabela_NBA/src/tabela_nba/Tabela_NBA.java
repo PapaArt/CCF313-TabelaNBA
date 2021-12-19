@@ -81,12 +81,14 @@ public class Tabela_NBA {
                 j = j - 1;
             }
             times[j+1] = copiaTimes[i];
+            times[j+1].setPosicao(i);
         }
     }
     
     public void classificacao(Time times[]){
         int n = times.length;
         for (int i = 0; i < n; i++){
+            System.out.println("posicao: " + times[i].getPosicao());
             System.out.println(times[i].getNomeTime());
         }
     }
