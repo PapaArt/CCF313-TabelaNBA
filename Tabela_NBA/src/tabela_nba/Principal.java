@@ -24,24 +24,6 @@ public class Principal {
         tabela.times[1].setDerrotas(3);
         tabela.times[1].setPontosPorJogo(PONTOSTOTAIS_TIME2);
         
-        DecimalFormat formatador = new DecimalFormat("000.00");
-        
-        System.out.println("Nome time 1: "+tabela.times[0].getNomeTime());
-        System.out.println();
-        System.out.println("get vitorias time 1: " +tabela.times[0].getVitorias());
-        System.out.println("get derrotas time 1: " +tabela.times[0].getDerrotas());
-        System.out.println("get jogos time 1: "+tabela.times[0].getJogos());
-        System.out.println("Porcentagem de vitoria time 1: " + (tabela.times[0].getPorcentagemVitoria())* 100 + "%");
-        System.out.println("Pontos totais time 1: "+ PONTOSTOTAIS_TIME1);
-        System.out.println("Media pontos por jogo time 1: "+ formatador.format(tabela.times[0].getPontosPorJogo()));
-        System.out.println();
-        System.out.println("Nome time 2: "+tabela.times[1].getNomeTime());
-        System.out.println("get vitorias time 2: " +tabela.times[1].getVitorias());
-        System.out.println("get vitorias time 2: " +tabela.times[1].getDerrotas());
-        System.out.println("get jogos time 2: "+tabela.times[1].getJogos());
-        System.out.println("Porcentagem de vitoria time 2: " + (tabela.times[1].getPorcentagemVitoria())* 100 + "%");
-        System.out.println("Pontos totais time 2: "+ PONTOSTOTAIS_TIME2);
-        System.out.println("Media pontos por jogo time 2: "+ tabela.times[1].getPontosPorJogo());
         System.out.println();
         tabela.ordenaPosicao(tabela.times);
         tabela.classificacao(tabela.times);

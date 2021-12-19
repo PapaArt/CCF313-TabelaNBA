@@ -1,6 +1,7 @@
 
 package tabela_nba;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 /**
  *
@@ -10,12 +11,16 @@ import java.util.Scanner;
 public class Tabela_NBA {
     
     Scanner scan = new Scanner(System.in);  
+    
+    public static final int QUANTIDADE_TIMES = (int) 2;
+    
     //Time time1,time2;
-    Time[] times = new Time[2];
+    Time[] times = new Time[QUANTIDADE_TIMES];
     private int quantidadeJogos;
     //conferência: 1 para Leste / 0 para Oeste
     
     private String nomesTimes; //implementar depois
+    
     
         
     enum Conferencia{
@@ -61,12 +66,6 @@ public class Tabela_NBA {
         this.conferencia = conferencia;
     }
     
-    public void setPosicao(int posicao) {
-        if(times[0].getPorcentagemVitoria() > times[1].getPorcentagemVitoria()){
-            times[0].setPosicao(1);
-        }  
-    }
-    
     public void ordenaPosicao(Time times[]){
         int n = times.length;
         Time[] copiaTimes = times.clone();
@@ -81,15 +80,29 @@ public class Tabela_NBA {
                 j = j - 1;
             }
             times[j+1] = copiaTimes[i];
-            times[j+1].setPosicao(i);
         }
     }
     
     public void classificacao(Time times[]){
         int n = times.length;
+        
+        DecimalFormat formatador = new DecimalFormat("0.00");
+        
         for (int i = 0; i < n; i++){
-            System.out.println("posicao: " + times[i].getPosicao());
-            System.out.println(times[i].getNomeTime());
+            times[i].setPosicao(i);
+        }
+        
+        System.out.println("CLASSIFICACAO ");
+        System.out.println("Times   V   D   %VIT    PPJ");
+        
+        for (int i = 0; i < n; i++){
+            System.out.print(+(times[i].getPosicao() + 1) + " ");
+            System.out.print(times[i].getNomeTime() + " ");
+            System.out.print(times[i].getVitorias() + " ");
+            System.out.print(times[i].getDerrotas() + " ");
+            System.out.print((times[i].getPorcentagemVitoria())* 100 + "% ");
+            System.out.print(formatador.format(times[i].getPontosPorJogo()) + " ");
+            System.out.println();
         }
     }
 }
