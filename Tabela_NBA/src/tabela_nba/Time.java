@@ -36,32 +36,7 @@ public class Time {
     public void defineNomeTime(String time){
         this.nomeTime = time;
     }
-        
-    public int ganhou(){
-        this.vitorias += 1;
-        return this.vitorias;
-    }
-    
-    public int perdeu(){
-        this.derrotas += 1;
-        return this.vitorias;
-    }
-    
-    public double aproveitamento(){
-        this.jogos = this.vitorias + this.derrotas;
-        this.porcentagemVitoria = this.vitorias/this.jogos;
-        return this.porcentagemVitoria;
-    }
-    
-    public int numeroJogos(){
-        this.jogos = this.vitorias + this.derrotas;
-        return this.jogos;
-    }
-    
-    public double mediaDePontos(){
-        return this.pontosPorJogo/this.jogos;
-    } 
-    
+
     public int posicaoTabela(){
         return this.posicao;
     }
@@ -83,11 +58,12 @@ public class Time {
     }
 
     public double getPorcentagemVitoria() {
+        this.porcentagemVitoria = (double)this.vitorias/this.jogos;
         return porcentagemVitoria;
     }
 
     public double getPontosPorJogo() {
-        return pontosPorJogo;
+        return this.pontosPorJogo/this.jogos;
     }
 
     public int getPosicao() {
@@ -96,22 +72,20 @@ public class Time {
 
     public void setVitorias(int vitorias) {
         this.vitorias = vitorias;
+        this.jogos += vitorias;
     }
 
     public void setDerrotas(int derrotas) {
         this.derrotas = derrotas;
+        this.jogos += derrotas;
     }
 
-    public void setJogos(int jogos) {
-        this.jogos = jogos;
-    }
-
-    public void setPorcentagemVitoria(double porcentagemVitoria) {
-        this.porcentagemVitoria = porcentagemVitoria;
-    }
-
+//    public void setPorcentagemVitoria(double porcentagemVitoria) {
+//        this.porcentagemVitoria = porcentagemVitoria;
+//    }
+//
     public void setPosicao(int posicao) {
         this.posicao = posicao;
     }
-    
+   
 }
