@@ -17,11 +17,32 @@ public class Principal {
         //int defineQuantidadeJogos = tabela.defineQuantidadeJogos();
 //        tabela.time1.ganhou();
 //        tabela.time1.aproveitamento();
-        tabela.times[0].setVitorias(6);
-        tabela.times[0].setDerrotas(4);
+ 
+        tabela.times[0].setJogos(10);
+        tabela.times[0].incrementaVitorias();
+        tabela.times[0].incrementaVitorias();
+        tabela.times[0].incrementaVitorias();
+        tabela.times[0].incrementaVitorias();
+        tabela.times[0].incrementaVitorias();
+        tabela.times[0].incrementaVitorias();
+        tabela.times[0].incrementaDerrotas();
+        tabela.times[0].incrementaDerrotas();
+        tabela.times[0].incrementaDerrotas();
+        tabela.times[0].incrementaDerrotas();
+        tabela.times[0].incrementaDerrotas();
         tabela.times[0].setPontosPorJogo(PONTOSTOTAIS_TIME1);
-        tabela.times[1].setVitorias(7);
-        tabela.times[1].setDerrotas(3);
+        
+        tabela.times[1].setJogos(10);
+        tabela.times[1].incrementaVitorias();
+        tabela.times[1].incrementaVitorias();
+        tabela.times[1].incrementaVitorias();
+        tabela.times[1].incrementaVitorias();
+        tabela.times[1].incrementaVitorias();
+        tabela.times[1].incrementaVitorias();
+        tabela.times[1].incrementaVitorias();
+        tabela.times[1].incrementaDerrotas();
+        tabela.times[1].incrementaDerrotas();
+        tabela.times[1].incrementaDerrotas();
         tabela.times[1].setPontosPorJogo(PONTOSTOTAIS_TIME2);
         
         System.out.println();

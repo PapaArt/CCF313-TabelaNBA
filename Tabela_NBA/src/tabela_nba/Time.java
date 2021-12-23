@@ -70,15 +70,28 @@ public class Time {
         return posicao;
     }
 
-    public void setVitorias(int vitorias) {
-        this.vitorias = vitorias;
-        this.jogos += vitorias;
+    public void incrementaVitorias(){
+        this.vitorias += 1;
+    }
+    
+    public void incrementaDerrotas(){
+        this.derrotas += 1;
     }
 
-    public void setDerrotas(int derrotas) {
-        this.derrotas = derrotas;
-        this.jogos += derrotas;
+    public void setJogos(int jogos) {
+        this.jogos = jogos;
     }
+    
+    
+//    public void setVitorias(int vitorias) {
+//        this.vitorias = vitorias;
+//        this.jogos += vitorias;
+//    }
+//
+//    public void setDerrotas(int derrotas) {
+//        this.derrotas = derrotas;
+//        this.jogos += derrotas;
+//    }
 
 //    public void setPorcentagemVitoria(double porcentagemVitoria) {
 //        this.porcentagemVitoria = porcentagemVitoria;
