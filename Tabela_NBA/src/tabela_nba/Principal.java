@@ -3,6 +3,7 @@ package tabela_nba;
 
 import java.text.DecimalFormat;
 import tabela_nba.Tabela_NBA.Conferencia;
+import tabela_nba.Time.ConferenciaTime;
 
 /**
  *
@@ -15,7 +16,11 @@ public class Principal {
         Tabela_NBA tabela = new Tabela_NBA(Conferencia.LESTE);
         
         
-        tabela.addTime(new Time("Bulls"));
+        tabela.addTime(new Time("Bulls", ConferenciaTime.LESTE, 0));
+        tabela.addTime(new Time("Nets", ConferenciaTime.LESTE, 1));
+        tabela.addTime(new Time("Heat", ConferenciaTime.LESTE, 2));
+        tabela.addTime(new Time("Bucks", ConferenciaTime.LESTE, 3));
+        
         
 
 //        tabela.time1.ganhou();

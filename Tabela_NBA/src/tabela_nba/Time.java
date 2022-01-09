@@ -22,20 +22,22 @@ public class Time {
     private double pontosPorJogo;
     
     private int posicao;
+    private int id;
 
-    enum Conferencia{
+    enum ConferenciaTime{
         LESTE, OESTE;
     }
     
-    private Conferencia conferencia;
+    private ConferenciaTime conferencia;
     
-    public Time(String nomeTime, Conferencia conferencia){
+    public Time(String nomeTime, ConferenciaTime conferencia, int idTime){
         this.nomeTime = nomeTime;
         this.vitorias = 0;
         this.derrotas = 0;
         this.jogos = 0; 
         this.pontosPorJogo = 0;
         this.posicao = 0;
+        this.id = idTime;
         this.conferencia = conferencia;
     }
     
@@ -87,8 +89,11 @@ public class Time {
     public void setJogos(int jogos) {
         this.jogos = jogos;
     }
-    
-    
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 //    public void setVitorias(int vitorias) {
 //        this.vitorias = vitorias;
 //        this.jogos += vitorias;
