@@ -49,7 +49,7 @@ public class Principal {
 //        tabela.times[1].setPontosPorJogo(PONTOSTOTAIS_TIME2);
         
         
-        System.out.println(" "+tabela.getNomesTimes());
+        //System.out.println(" "+tabela.getNomesTimes());
         
 //        tabela.ordenaPosicao(tabela.times);
 //        tabela.classificacao(tabela.times);

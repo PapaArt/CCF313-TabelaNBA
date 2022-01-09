@@ -23,14 +23,20 @@ public class Time {
     
     private int posicao;
 
+    enum Conferencia{
+        LESTE, OESTE;
+    }
     
-    public Time(String nomeTime){
+    private Conferencia conferencia;
+    
+    public Time(String nomeTime, Conferencia conferencia){
         this.nomeTime = nomeTime;
         this.vitorias = 0;
         this.derrotas = 0;
         this.jogos = 0; 
         this.pontosPorJogo = 0;
         this.posicao = 0;
+        this.conferencia = conferencia;
     }
     
     public void defineNomeTime(String time){

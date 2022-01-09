@@ -15,6 +15,7 @@ public class Tabela_NBA {
     Scanner scan = new Scanner(System.in);  
     
     public static final int QUANTIDADE_TIMES = (int) 2;
+    public static final int QTD_JOGOS = (int) 82;
     
     //Time time1,time2;
     //Time[] times = new Time[QUANTIDADE_TIMES];
@@ -48,21 +49,13 @@ public class Tabela_NBA {
         this.conferencia = novaConferencia;
     }
 
-    public int getQuantidadeJogos() {
-        return quantidadeJogos;
-    }
-
     public Conferencia getConferencia() {
         return conferencia;
     }
 
-    public void setQuantidadeJogos() {
-        this.quantidadeJogos = ;
+    public void setQuantidadeJogosTotal() {
+        this.quantidadeJogos = QTD_JOGOS;
     }
-
-//    public void setNomesTimes(String[] nomesTimes) {
-//        this.nomesTimes = nomesTimes;
-//    }
 
     public void setConferencia(Conferencia conferencia) {
         this.conferencia = conferencia;
