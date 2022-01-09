@@ -3,6 +3,8 @@ package tabela_nba;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
+import java.util.ArrayList;
+
 /**
  *
  * @author artur
@@ -15,7 +17,8 @@ public class Tabela_NBA {
     public static final int QUANTIDADE_TIMES = (int) 2;
     
     //Time time1,time2;
-    Time[] times = new Time[QUANTIDADE_TIMES];
+    //Time[] times = new Time[QUANTIDADE_TIMES];
+    private ArrayList<Time> listaTimes;
     private int quantidadeJogos;
     //conferência: 1 para Leste / 0 para Oeste
     
@@ -30,12 +33,15 @@ public class Tabela_NBA {
     private Conferencia conferencia;
     
     public Tabela_NBA(Conferencia nome){
-        times[0] = new Time("Bulls");
-        times[1] = new Time("Lakers");
+        listaTimes = new ArrayList();
         this.conferencia = nome;
 //        for (int i = 0; i < 15; i++) {
 //            this.nomesTimes[i] = "";
 //        }
+    }
+    
+    public void addTime(Time time){
+        listaTimes.add(time);
     }
     
     public void mudarConferencia(Conferencia novaConferencia){
@@ -46,16 +52,12 @@ public class Tabela_NBA {
         return quantidadeJogos;
     }
 
-    public String getNomesTimes() {
-        return nomesTimes;
-    }
-
     public Conferencia getConferencia() {
         return conferencia;
     }
 
     public void setQuantidadeJogos() {
-        this.quantidadeJogos = times[0].getJogos();
+        this.quantidadeJogos = ;
     }
 
 //    public void setNomesTimes(String[] nomesTimes) {
@@ -83,25 +85,21 @@ public class Tabela_NBA {
         }
     }
     
-    public void classificacao(Time times[]){
-        int n = times.length;
+    void classificacao(){
+        
         
         DecimalFormat formatador = new DecimalFormat("0.00");
-        
-        for (int i = 0; i < n; i++){
-            times[i].setPosicao(i);
-        }
         
         System.out.println("CLASSIFICACAO ");
         System.out.println("Times    V D %VIT  PPJ");
         
-        for (int i = 0; i < n; i++){
-            System.out.print(+(times[i].getPosicao() + 1) + " ");
-            System.out.print(times[i].getNomeTime() + " ");
-            System.out.print(times[i].getVitorias() + " ");
-            System.out.print(times[i].getDerrotas() + " ");
-            System.out.print((times[i].getPorcentagemVitoria())* 100 + "% ");
-            System.out.print(formatador.format(times[i].getPontosPorJogo()) + " ");
+        for (Time nomeTime : listaTimes){
+            System.out.print(+(nomeTime.getPosicao() + 1) + " ");
+            System.out.print(nomeTime.getNomeTime() + " ");
+            System.out.print(nomeTime.getVitorias() + " ");
+            System.out.print(nomeTime.getDerrotas() + " ");
+            System.out.print((nomeTime.getPorcentagemVitoria())* 100 + "% ");
+            System.out.print(formatador.format(nomeTime.getPontosPorJogo()) + " ");
             System.out.println();
         }
     }

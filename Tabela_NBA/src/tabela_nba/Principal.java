@@ -14,40 +14,45 @@ public class Principal {
     public static void main(String[] args) {
         Tabela_NBA tabela = new Tabela_NBA(Conferencia.LESTE);
         
-        //int defineQuantidadeJogos = tabela.defineQuantidadeJogos();
+        
+        tabela.addTime(new Time("Bulls"));
+        
+
 //        tabela.time1.ganhou();
 //        tabela.time1.aproveitamento();
  
-        tabela.times[0].setJogos(10);
-        tabela.times[0].incrementaVitorias();
-        tabela.times[0].incrementaVitorias();
-        tabela.times[0].incrementaVitorias();
-        tabela.times[0].incrementaVitorias();
-        tabela.times[0].incrementaVitorias();
-        tabela.times[0].incrementaVitorias();
-        tabela.times[0].incrementaDerrotas();
-        tabela.times[0].incrementaDerrotas();
-        tabela.times[0].incrementaDerrotas();
-        tabela.times[0].incrementaDerrotas();
-        tabela.times[0].incrementaDerrotas();
-        tabela.times[0].setPontosPorJogo(PONTOSTOTAIS_TIME1);
+//        tabela.times[0].setJogos(10);
+//        tabela.times[0].incrementaVitorias();
+//        tabela.times[0].incrementaVitorias();
+//        tabela.times[0].incrementaVitorias();
+//        tabela.times[0].incrementaVitorias();
+//        tabela.times[0].incrementaVitorias();
+//        tabela.times[0].incrementaVitorias();
+//        tabela.times[0].incrementaDerrotas();
+//        tabela.times[0].incrementaDerrotas();
+//        tabela.times[0].incrementaDerrotas();
+//        tabela.times[0].incrementaDerrotas();
+//        tabela.times[0].incrementaDerrotas();
+//        tabela.times[0].setPontosPorJogo(PONTOSTOTAIS_TIME1);
+//        
+//        tabela.times[1].setJogos(10);
+//        tabela.times[1].incrementaVitorias();
+//        tabela.times[1].incrementaVitorias();
+//        tabela.times[1].incrementaVitorias();
+//        tabela.times[1].incrementaVitorias();
+//        tabela.times[1].incrementaVitorias();
+//        tabela.times[1].incrementaVitorias();
+//        tabela.times[1].incrementaVitorias();
+//        tabela.times[1].incrementaDerrotas();
+//        tabela.times[1].incrementaDerrotas();
+//        tabela.times[1].incrementaDerrotas();
+//        tabela.times[1].setPontosPorJogo(PONTOSTOTAIS_TIME2);
         
-        tabela.times[1].setJogos(10);
-        tabela.times[1].incrementaVitorias();
-        tabela.times[1].incrementaVitorias();
-        tabela.times[1].incrementaVitorias();
-        tabela.times[1].incrementaVitorias();
-        tabela.times[1].incrementaVitorias();
-        tabela.times[1].incrementaVitorias();
-        tabela.times[1].incrementaVitorias();
-        tabela.times[1].incrementaDerrotas();
-        tabela.times[1].incrementaDerrotas();
-        tabela.times[1].incrementaDerrotas();
-        tabela.times[1].setPontosPorJogo(PONTOSTOTAIS_TIME2);
         
-        System.out.println();
-        tabela.ordenaPosicao(tabela.times);
-        tabela.classificacao(tabela.times);
+        System.out.println(" "+tabela.getNomesTimes());
         
+//        tabela.ordenaPosicao(tabela.times);
+//        tabela.classificacao(tabela.times);
+//        
     }
 }
