@@ -56,6 +56,10 @@ public class Tabela_NBA {
     public void setQuantidadeJogosTotal() {
         this.quantidadeJogos = QTD_JOGOS;
     }
+    
+    public void embates(){
+        
+    }
 
     public void setConferencia(Conferencia conferencia) {
         this.conferencia = conferencia;
