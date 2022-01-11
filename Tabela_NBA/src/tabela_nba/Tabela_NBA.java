@@ -4,6 +4,8 @@ package tabela_nba;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
+
 
 /**
  *
@@ -12,7 +14,9 @@ import java.util.ArrayList;
  */
 public class Tabela_NBA {
     
-    Scanner scan = new Scanner(System.in);  
+    Scanner scan = new Scanner(System.in);
+    
+    Random rand = new Random();
     
     public static final int QUANTIDADE_TIMES = (int) 2;
     public static final int QTD_JOGOS = (int) 82;
@@ -59,6 +63,27 @@ public class Tabela_NBA {
     
     public void embates(){
         
+        // Selecionar um time aleatorio 'i' e fazer todos os enfrentamentos
+        // Os enfrentamentos serao baseados no valor aleatorio 'j' e de acordo
+        // com as regras da NBA de sorteio, decidir metodo para vitoria/derrota
+        // e decidir metodo de parada
+        
+        /**
+         * 4 jogos contra os outros 4 adversários da divisão (4×4=16 jogos)
+         * 4 jogos* contra 6 adversários da conferência (fora da divisão) (4×6=24 jogos)
+         * 3 jogos contra as restantes 4 equipas da conferência (3×4=12 jogos)
+         * 2 jogos contra equipas da conferência adversária (2×15=30 jogos)
+         */
+        
+        int i = rand.nextInt(QUANTIDADE_TIMES);
+        int j = rand.nextInt(QUANTIDADE_TIMES);
+        
+        do{
+            for(){
+               
+            }
+            
+        }while()
     }
 
     public void setConferencia(Conferencia conferencia) {
