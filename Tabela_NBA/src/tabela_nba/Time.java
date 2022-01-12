@@ -90,8 +90,8 @@ public class Time {
         this.derrotas += 1;
     }
 
-    public void setJogos(int jogos) {
-        this.jogos = jogos;
+    public void incrementaJogos() {
+        this.jogos += 1;
     }
 
     public void setId(int id) {
