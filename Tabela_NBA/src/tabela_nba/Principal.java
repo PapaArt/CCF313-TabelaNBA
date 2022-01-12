@@ -22,7 +22,8 @@ public class Principal {
         tabela.addTime(new Time("Bucks", ConferenciaTime.LESTE, 3));
         
         
-
+        tabela.embates(0, 1, 2);
+        tabela.classificacao();
 //        tabela.time1.ganhou();
 //        tabela.time1.aproveitamento();
  

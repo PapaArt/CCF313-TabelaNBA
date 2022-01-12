@@ -78,6 +78,10 @@ public class Time {
         return posicao;
     }
 
+    public int getId() {
+        return id;
+    }
+    
     public void incrementaVitorias(){
         this.vitorias += 1;
     }

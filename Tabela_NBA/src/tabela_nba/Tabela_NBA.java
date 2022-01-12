@@ -21,7 +21,7 @@ public class Tabela_NBA {
     //Time[] times = new Time[QUANTIDADE_TIMES];
     private ArrayList<Time> listaTimes;
     private int quantidadeJogos;
-    //conferência: 1 para Leste / 0 para Oeste
+    
     
     private String nomesTimes; //implementar depois
     
@@ -30,6 +30,7 @@ public class Tabela_NBA {
     enum Conferencia{
         LESTE, OESTE;
     }
+    
     
     private Conferencia conferencia;
     
@@ -57,8 +58,30 @@ public class Tabela_NBA {
         this.quantidadeJogos = QTD_JOGOS;
     }
     
-    public void embates(){
-        
+    // vencedor == 1 para time1 && vencedor == 2 para time2
+    public void embates(int idTime1, int idTime2, int vencedor){
+        if(vencedor < 1 || vencedor > 2){
+            System.err.println("Insira um time vencedor válido!");
+        }
+        for(Time nomeTime : listaTimes){
+            if(idTime1 == nomeTime.getId()){
+                if(vencedor == 1){
+                    nomeTime.incrementaVitorias();
+                    
+                }
+                else{
+                    nomeTime.incrementaDerrotas();
+                }
+            }
+            else if(idTime2 == nomeTime.getId()){
+                if(vencedor == 2){
+                    nomeTime.incrementaVitorias();
+                }
+                else{
+                    nomeTime.incrementaDerrotas();
+                }
+            }
+        }
     }
 
     public void setConferencia(Conferencia conferencia) {
