@@ -20,45 +20,12 @@ public class Principal {
         tabela.addTime(new Time("Nets", ConferenciaTime.LESTE, 1));
         tabela.addTime(new Time("Heat", ConferenciaTime.LESTE, 2));
         tabela.addTime(new Time("Bucks", ConferenciaTime.LESTE, 3));
+        tabela.addTime(new Time("Celtics", ConferenciaTime.LESTE, 4));
+        tabela.addTime(new Time("Hornets", ConferenciaTime.LESTE, 5));
         
         
-        tabela.embates(0, 1, 2);
+        tabela.confrontos();
         tabela.classificacao();
-//        tabela.time1.ganhou();
-//        tabela.time1.aproveitamento();
- 
-//        tabela.times[0].setJogos(10);
-//        tabela.times[0].incrementaVitorias();
-//        tabela.times[0].incrementaVitorias();
-//        tabela.times[0].incrementaVitorias();
-//        tabela.times[0].incrementaVitorias();
-//        tabela.times[0].incrementaVitorias();
-//        tabela.times[0].incrementaVitorias();
-//        tabela.times[0].incrementaDerrotas();
-//        tabela.times[0].incrementaDerrotas();
-//        tabela.times[0].incrementaDerrotas();
-//        tabela.times[0].incrementaDerrotas();
-//        tabela.times[0].incrementaDerrotas();
-//        tabela.times[0].setPontosPorJogo(PONTOSTOTAIS_TIME1);
-//        
-//        tabela.times[1].setJogos(10);
-//        tabela.times[1].incrementaVitorias();
-//        tabela.times[1].incrementaVitorias();
-//        tabela.times[1].incrementaVitorias();
-//        tabela.times[1].incrementaVitorias();
-//        tabela.times[1].incrementaVitorias();
-//        tabela.times[1].incrementaVitorias();
-//        tabela.times[1].incrementaVitorias();
-//        tabela.times[1].incrementaDerrotas();
-//        tabela.times[1].incrementaDerrotas();
-//        tabela.times[1].incrementaDerrotas();
-//        tabela.times[1].setPontosPorJogo(PONTOSTOTAIS_TIME2);
-        
-        
-        //System.out.println(" "+tabela.getNomesTimes());
-        
-//        tabela.ordenaPosicao(tabela.times);
-//        tabela.classificacao(tabela.times);
-//        
+
     }
 }

@@ -18,11 +18,10 @@ public class Tabela_NBA {
     
     Random rand = new Random();
     
-    public static final int QUANTIDADE_TIMES = (int) 2;
+    public static final int QUANTIDADE_TIMES = (int) 6;
     public static final int QTD_JOGOS = (int) 82;
     
-    //Time time1,time2;
-    //Time[] times = new Time[QUANTIDADE_TIMES];
+
     private ArrayList<Time> listaTimes;
     private int quantidadeJogos;
     
@@ -41,9 +40,6 @@ public class Tabela_NBA {
     public Tabela_NBA(Conferencia nome){
         listaTimes = new ArrayList();
         this.conferencia = nome;
-//        for (int i = 0; i < 15; i++) {
-//            this.nomesTimes[i] = "";
-//        }
     }
     
     public void addTime(Time time){
@@ -62,14 +58,23 @@ public class Tabela_NBA {
         this.quantidadeJogos = QTD_JOGOS;
     }
     
-    // vencedor == 1 para time1 && vencedor == 2 para time2
+    // vencedor == 0 para time1 && vencedor == 1 para time2
     public void embates(int idTime1, int idTime2, int vencedor){
-        if(vencedor < 1 || vencedor > 2){
+        if(vencedor < 0 || vencedor > 1){
             System.err.println("Insira um time vencedor válido!");
+            
+            return;
         }
+        
+        if(idTime1 == idTime2){
+            System.err.println("Mesmo time, executar programa novamente!!!");
+            
+            return;
+        }
+        
         for(Time nomeTime : listaTimes){
             if(idTime1 == nomeTime.getId()){
-                if(vencedor == 1){
+                if(vencedor == 0){
                     nomeTime.incrementaVitorias();
                     nomeTime.incrementaJogos();
                 }
@@ -79,7 +84,7 @@ public class Tabela_NBA {
                 }
             }
             else if(idTime2 == nomeTime.getId()){
-                if(vencedor == 2){
+                if(vencedor == 1){
                     nomeTime.incrementaVitorias();
                     nomeTime.incrementaJogos();
                 }
@@ -90,7 +95,7 @@ public class Tabela_NBA {
             }
         }
     }
-    public void embates(){
+    public void confrontos(){
         
         // Selecionar um time aleatorio 'i' e fazer todos os enfrentamentos
         // Os enfrentamentos serao baseados no valor aleatorio 'j' e de acordo
@@ -105,7 +110,20 @@ public class Tabela_NBA {
          */
         
         int i = rand.nextInt(QUANTIDADE_TIMES);
-        int j = rand.nextInt(QUANTIDADE_TIMES);
+        
+        do{
+            
+            int j = rand.nextInt(QUANTIDADE_TIMES);
+            int vencedor = rand.nextInt(2);
+            
+            if (i != j){
+                
+                embates(i, j, vencedor);
+                
+            }
+    
+            
+        }while(listaTimes.get(i).getJogos() != 82);
         
     }
 
@@ -113,25 +131,22 @@ public class Tabela_NBA {
         this.conferencia = conferencia;
     }
     
-    public void ordenaPosicao(Time times[]){
-        int n = times.length;
-        Time[] copiaTimes = times.clone();
+    public void ordenaPosicao(){
         
-        for (int i = 1; i < n; i++){
-            double key = times[i].getPorcentagemVitoria();
-            copiaTimes[i] = times[i];
-            int j = i - 1;
-            
-            while (j >= 0 && times[j].getPorcentagemVitoria() < key){
-                times[j+1] = times[j];
-                j = j - 1;
+        for (int i = 1; i < listaTimes.size(); i++){
+            Time novoTime = listaTimes.get(i);
+            int j;
+            for (j = i; i > 0 && listaTimes.get(i-1).getPorcentagemVitoria() < novoTime.getPorcentagemVitoria(); i--){
+                listaTimes.set(i, listaTimes.get(i-1));
             }
-            times[j+1] = copiaTimes[i];
+            listaTimes.set(i, novoTime);
+            listaTimes.get(i).setPosicao(i);
         }
     }
     
     void classificacao(){
         
+        ordenaPosicao();
         
         DecimalFormat formatador = new DecimalFormat("0.00");
         
@@ -143,7 +158,7 @@ public class Tabela_NBA {
             System.out.print(nomeTime.getNomeTime() + " ");
             System.out.print(nomeTime.getVitorias() + " ");
             System.out.print(nomeTime.getDerrotas() + " ");
-            System.out.print((nomeTime.getPorcentagemVitoria())* 100 + "% ");
+            System.out.print(formatador.format((nomeTime.getPorcentagemVitoria())* 100) + "% ");
             System.out.print(formatador.format(nomeTime.getPontosPorJogo()) + " ");
             System.out.println();
         }

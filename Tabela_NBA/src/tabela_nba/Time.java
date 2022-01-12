@@ -98,20 +98,6 @@ public class Time {
         this.id = id;
     }
 
-//    public void setVitorias(int vitorias) {
-//        this.vitorias = vitorias;
-//        this.jogos += vitorias;
-//    }
-//
-//    public void setDerrotas(int derrotas) {
-//        this.derrotas = derrotas;
-//        this.jogos += derrotas;
-//    }
-
-//    public void setPorcentagemVitoria(double porcentagemVitoria) {
-//        this.porcentagemVitoria = porcentagemVitoria;
-//    }
-//
     public void setPosicao(int posicao) {
         this.posicao = posicao;
     }
