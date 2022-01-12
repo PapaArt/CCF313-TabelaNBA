@@ -71,21 +71,25 @@ public class Tabela_NBA {
             if(idTime1 == nomeTime.getId()){
                 if(vencedor == 1){
                     nomeTime.incrementaVitorias();
-                    
+                    nomeTime.incrementaJogos();
                 }
                 else{
                     nomeTime.incrementaDerrotas();
+                    nomeTime.incrementaJogos();
                 }
             }
             else if(idTime2 == nomeTime.getId()){
                 if(vencedor == 2){
                     nomeTime.incrementaVitorias();
+                    nomeTime.incrementaJogos();
                 }
                 else{
                     nomeTime.incrementaDerrotas();
+                    nomeTime.incrementaJogos();
                 }
             }
         }
+    }
     public void embates(){
         
         // Selecionar um time aleatorio 'i' e fazer todos os enfrentamentos
@@ -103,12 +107,6 @@ public class Tabela_NBA {
         int i = rand.nextInt(QUANTIDADE_TIMES);
         int j = rand.nextInt(QUANTIDADE_TIMES);
         
-        do{
-            for(){
-               
-            }
-            
-        }while()
     }
 
     public void setConferencia(Conferencia conferencia) {
