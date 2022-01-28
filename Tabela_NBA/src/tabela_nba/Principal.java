@@ -3,7 +3,7 @@ package tabela_nba;
 
 import java.text.DecimalFormat;
 import tabela_nba.Tabela_NBA.Conferencia;
-
+import tabela_nba.modelo.Time.ConferenciaTime;
 import tabela_nba.modelo.Time;
 
 /**
