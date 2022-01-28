@@ -24,7 +24,7 @@ public class Time {
     private int posicao;
     private int id;
 
-    enum ConferenciaTime{
+    public enum ConferenciaTime{
         LESTE, OESTE;
     }
     
