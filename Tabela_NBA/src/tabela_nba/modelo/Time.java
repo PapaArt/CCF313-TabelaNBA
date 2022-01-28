@@ -1,5 +1,5 @@
 
-package tabela_nba;
+package tabela_nba.modelo;
 
 import java.text.DecimalFormat;
 

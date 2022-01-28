@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
+import tabela_nba.modelo.Time;
 
 
 /**
