@@ -5,7 +5,7 @@
 Projeto de desenvolvimento de uma tabela de jogos da NBA com o propósito de analisar o resultado deles bem como o desempenho dos jogadores.
 Na tabela irão constar dados como o resultado das partidas, tabela de classificação, pontos por jogo, rebotes por jogo, entre outros.
 
-Utilizamos o Notion como forma de organização, identificando os objetivos principais, as metas desejadas e as já concluídas, além de links úteis para o desenvolvimento do projeto. Clique <a href="https://discord.com/channels/@me/821820576221364226/936722802688528396">aqui</a> para saber mais.
+Utilizamos o Notion como forma de organização, identificando os objetivos principais, as metas desejadas e as já concluídas, além de links úteis para o desenvolvimento do projeto. Clique <a href="https://www.notion.so/Ideias-para-POO-7a0e9d76af7842c78e610c91e93111cd">aqui</a> para saber mais.
  
  
 <ul> Progresso feito até o dia 19/12 👇🏼👇🏼👇🏼 
