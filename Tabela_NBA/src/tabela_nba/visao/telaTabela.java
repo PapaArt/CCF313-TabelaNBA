@@ -11,6 +11,7 @@ import tabela_nba.modelo.Time;
  */
 public class telaTabela {
     Tabela_NBA tabela = new Tabela_NBA(Conferencia.LESTE);
+    
     public void listarClassificacao(){
         
         tabela.ordenaPosicao();
@@ -29,5 +30,17 @@ public class telaTabela {
             System.out.print(formatador.format(nomeTime.getPontosPorJogo()) + " ");
             System.out.println();
         }
+    }
+    
+    public void telaInserir(){
+        
+        tabela.addTime(new Time("Bulls", Time.ConferenciaTime.LESTE, 0));
+        tabela.addTime(new Time("Nets", Time.ConferenciaTime.LESTE, 1));
+        tabela.addTime(new Time("Heat", Time.ConferenciaTime.LESTE, 2));
+        tabela.addTime(new Time("Bucks", Time.ConferenciaTime.LESTE, 3));
+        tabela.addTime(new Time("Celtics", Time.ConferenciaTime.LESTE, 4));
+        tabela.addTime(new Time("Hornets", Time.ConferenciaTime.LESTE, 5));
+        
+        tabela.confrontos();
     }
 }
