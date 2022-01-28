@@ -1,10 +1,11 @@
 
 package tabela_nba;
 
-import java.text.DecimalFormat;
-import tabela_nba.Tabela_NBA.Conferencia;
+import tabela_nba.controle.Tabela_NBA;
+import tabela_nba.controle.Tabela_NBA.Conferencia;
 import tabela_nba.modelo.Time.ConferenciaTime;
 import tabela_nba.modelo.Time;
+import tabela_nba.visao.telaTabela;
 
 /**
  *
@@ -15,7 +16,7 @@ public class Principal {
     public static final int PONTOSTOTAIS_TIME2 = (int) 1204;
     public static void main(String[] args) {
         Tabela_NBA tabela = new Tabela_NBA(Conferencia.LESTE);
-        
+        telaTabela tela = new telaTabela();
         
         tabela.addTime(new Time("Bulls", ConferenciaTime.LESTE, 0));
         tabela.addTime(new Time("Nets", ConferenciaTime.LESTE, 1));
@@ -26,7 +27,7 @@ public class Principal {
         
         
         tabela.confrontos();
-        tabela.classificacao();
+        tela.listarClassificacao();
 
     }
 }
