@@ -94,6 +94,13 @@ public class Tabela_NBA {
             }
         }
     }
+    
+    public int contTimesDivisao(){
+        for(Time times : listaTimes){
+            
+        }
+    }
+    
     public void confrontos(){
         
         // Selecionar um time aleatorio 'i' e fazer todos os enfrentamentos
