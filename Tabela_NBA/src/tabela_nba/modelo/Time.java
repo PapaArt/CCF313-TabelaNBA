@@ -82,7 +82,7 @@ public class Time {
     }
     
     public double getMediaPontosPorJogo() {
-        return this.pontosPorJogo;
+        return (double)this.pontosPorJogo/this.jogos;
     }
 
     public int getPosicao() {
@@ -116,7 +116,6 @@ public class Time {
     public void setPontosPorJogo(double pontosPorPartida) {
         
         this.pontosPorJogo += pontosPorPartida;
-        this.pontosPorJogo = this.pontosPorJogo/this.jogos;
     }
    
 }

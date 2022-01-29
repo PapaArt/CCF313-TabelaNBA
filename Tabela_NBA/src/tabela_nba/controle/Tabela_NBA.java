@@ -75,31 +75,31 @@ public class Tabela_NBA {
                     if(vencedor == 0){
                         nomeTime.incrementaVitorias();
                         nomeTime.incrementaJogos();
+                        nomeTime.setPontosPorJogo(rand.nextInt(20) + 100);
                     }
                     else{
                         nomeTime.incrementaDerrotas();
                         nomeTime.incrementaJogos();
+                        nomeTime.setPontosPorJogo(rand.nextInt(10) + 80);
                     }
                 }
                 else if(idTime2 == nomeTime.getId()){
                     if(vencedor == 1){
                         nomeTime.incrementaVitorias();
                         nomeTime.incrementaJogos();
+                        nomeTime.setPontosPorJogo(rand.nextInt(10) + 100);
                     }
                     else{
                         nomeTime.incrementaDerrotas();
                         nomeTime.incrementaJogos();
+                        nomeTime.setPontosPorJogo(rand.nextInt(10) + 85);
                     }
                 }
             }
         }
     }
     
-    public int contTimesDivisao(){
-        for(Time times : listaTimes){
-            
-        }
-    }
+
     
     public void confrontos(){
         
@@ -115,36 +115,17 @@ public class Tabela_NBA {
          */
         
         int i = rand.nextInt(QUANTIDADE_TIMES);
-        int contadorMesmaDiv = 0;
+
             
         
         do{
             int j = rand.nextInt(QUANTIDADE_TIMES);
             int vencedor = rand.nextInt(2);
             
-            if (listaTimes.get(i).getDivisao() == listaTimes.get(j).getDivisao()){
-                
-                
-                
-                if (contadorMesmaDiv < 4){
-                    vencedor = rand.nextInt(2);
-                    
-                    if (i != j){
-                        embates(i, j, vencedor);
-                        contadorMesmaDiv += 1;
-                    }
-                }else{
-                    break;
-                }
-                
-//                if (i != j)
-//                    embates(i, j, vencedor);
-                    
-                
-                
-            }
+            if (i != j)
+                embates(i, j, vencedor);
+            
         }while(listaTimes.get(i).getJogos() != QTD_JOGOS);
-        
     }
 
     public void setConferencia(Conferencia conferencia) {
