@@ -99,24 +99,21 @@ public class Tabela_NBA {
         }
     }
     
-
-    
-    public void confrontos(){
+   public void confrontos(){
         
         // Selecionar um time aleatorio 'i' e fazer todos os enfrentamentos
         // Os enfrentamentos serao baseados no valor aleatorio 'j' e de acordo
-        // com as regras da NBA de sorteio, decidir metodo de parada
+        // com as regras da NBA de sorteio, decidir metodo para vitoria/derrota
+        // e decidir metodo de parada
         
         /**
          * 4 jogos contra os outros 4 adversários da divisão (4×4=16 jogos)
          * 4 jogos* contra 6 adversários da conferência (fora da divisão) (4×6=24 jogos)
-         * 3 jogos contra as restantes 4 equipes da conferência (3×4=12 jogos)
-         * 2 jogos contra equipes da conferência adversária (2×15=30 jogos)
+         * 3 jogos contra as restantes 4 equipas da conferência (3×4=12 jogos)
+         * 2 jogos contra equipas da conferência adversária (2×15=30 jogos)
          */
         
         int i = rand.nextInt(QUANTIDADE_TIMES);
-
-            
         
         do{
             int j = rand.nextInt(QUANTIDADE_TIMES);
@@ -127,6 +124,8 @@ public class Tabela_NBA {
             
         }while(listaTimes.get(i).getJogos() != QTD_JOGOS);
     }
+        
+    
 
     public void setConferencia(Conferencia conferencia) {
         this.conferencia = conferencia;
