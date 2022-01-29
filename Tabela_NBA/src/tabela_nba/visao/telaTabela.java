@@ -12,6 +12,7 @@ import tabela_nba.modelo.Time;
 public class telaTabela {
     Tabela_NBA tabela = new Tabela_NBA(Conferencia.LESTE);
     
+    
     public void listarClassificacao(){
         
         tabela.ordenaPosicao();
