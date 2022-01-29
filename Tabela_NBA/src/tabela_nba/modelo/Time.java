@@ -24,13 +24,19 @@ public class Time {
     private int posicao;
     private int id;
 
+    public enum Divisao{
+        ATLANTICO, CENTRAL, SUDESTE, NOROESTE, PACIFICO, SUDOESTE;
+    }
+    
+    
     public enum ConferenciaTime{
         LESTE, OESTE;
     }
     
     private ConferenciaTime conferencia;
+    private Divisao divisao;
     
-    public Time(String nomeTime, ConferenciaTime conferencia, int idTime){
+    public Time(String nomeTime, ConferenciaTime conferencia, Divisao divisao, int idTime){
         this.nomeTime = nomeTime;
         this.vitorias = 0;
         this.derrotas = 0;
@@ -39,6 +45,7 @@ public class Time {
         this.posicao = 0;
         this.id = idTime;
         this.conferencia = conferencia;
+        this.divisao = divisao;
     }
     
     public void defineNomeTime(String time){
@@ -69,7 +76,11 @@ public class Time {
         this.porcentagemVitoria = (double)this.vitorias/this.jogos;
         return porcentagemVitoria;
     }
-
+    
+    public Divisao getDivisao(){
+        return divisao;
+    }
+    
     public double getMediaPontosPorJogo() {
         return this.pontosPorJogo;
     }

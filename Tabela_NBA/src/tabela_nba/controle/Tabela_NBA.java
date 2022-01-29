@@ -29,7 +29,7 @@ public class Tabela_NBA {
     
     private String nomesTimes; //implementar depois
 
-           
+    
     public enum Conferencia{
         LESTE, OESTE;
     }
@@ -93,8 +93,7 @@ public class Tabela_NBA {
         
         // Selecionar um time aleatorio 'i' e fazer todos os enfrentamentos
         // Os enfrentamentos serao baseados no valor aleatorio 'j' e de acordo
-        // com as regras da NBA de sorteio, decidir metodo para vitoria/derrota
-        // e decidir metodo de parada
+        // com as regras da NBA de sorteio, decidir metodo de parada
         
         /**
          * 4 jogos contra os outros 4 adversários da divisão (4×4=16 jogos)
@@ -104,14 +103,34 @@ public class Tabela_NBA {
          */
         
         int i = rand.nextInt(QUANTIDADE_TIMES);
+        int contadorMesmaDiv = 0;
+            
         
         do{
             int j = rand.nextInt(QUANTIDADE_TIMES);
             int vencedor = rand.nextInt(2);
             
-            if (i != j)
-               embates(i, j, vencedor);
-            
+            if (listaTimes.get(i).getDivisao() == listaTimes.get(j).getDivisao()){
+                
+                
+                
+                if (contadorMesmaDiv < 4){
+                    vencedor = rand.nextInt(2);
+                    
+                    if (i != j){
+                        embates(i, j, vencedor);
+                        contadorMesmaDiv += 1;
+                    }
+                }else{
+                    break;
+                }
+                
+//                if (i != j)
+//                    embates(i, j, vencedor);
+                    
+                
+                
+            }
         }while(listaTimes.get(i).getJogos() != QTD_JOGOS);
         
     }

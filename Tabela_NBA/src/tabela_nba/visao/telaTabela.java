@@ -35,12 +35,12 @@ public class telaTabela {
     
     public void telaInserir(){
         
-        tabela.addTime(new Time("Bulls", Time.ConferenciaTime.LESTE, 0));
-        tabela.addTime(new Time("Nets", Time.ConferenciaTime.LESTE, 1));
-        tabela.addTime(new Time("Heat", Time.ConferenciaTime.LESTE, 2));
-        tabela.addTime(new Time("Bucks", Time.ConferenciaTime.LESTE, 3));
-        tabela.addTime(new Time("Celtics", Time.ConferenciaTime.LESTE, 4));
-        tabela.addTime(new Time("Hornets", Time.ConferenciaTime.LESTE, 5));
+        tabela.addTime(new Time("Bulls", Time.ConferenciaTime.LESTE, Time.Divisao.CENTRAL,0));
+        tabela.addTime(new Time("Nets", Time.ConferenciaTime.LESTE, Time.Divisao.ATLANTICO,1));
+        tabela.addTime(new Time("Heat", Time.ConferenciaTime.LESTE, Time.Divisao.SUDESTE,2));
+        tabela.addTime(new Time("Bucks", Time.ConferenciaTime.LESTE, Time.Divisao.CENTRAL,3));
+        tabela.addTime(new Time("Celtics", Time.ConferenciaTime.LESTE, Time.Divisao.ATLANTICO,4));
+        tabela.addTime(new Time("Hornets", Time.ConferenciaTime.LESTE, Time.Divisao.ATLANTICO,5));
         
         tabela.confrontos();
     }
