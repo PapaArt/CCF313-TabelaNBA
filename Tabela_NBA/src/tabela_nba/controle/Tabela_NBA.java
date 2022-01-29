@@ -112,7 +112,7 @@ public class Tabela_NBA {
             if (i != j)
                embates(i, j, vencedor);
             
-        }while(listaTimes.get(i).getJogos() != 82);
+        }while(listaTimes.get(i).getJogos() != QTD_JOGOS);
         
     }
 
@@ -124,8 +124,8 @@ public class Tabela_NBA {
         
         for (int i = 1; i < listaTimes.size(); i++){
             Time novoTime = listaTimes.get(i);
-            int j;
-            for (j = i; i > 0 && listaTimes.get(i-1).getPorcentagemVitoria() < novoTime.getPorcentagemVitoria(); i--){
+            
+            for (int j = i; i > 0 && listaTimes.get(i-1).getPorcentagemVitoria() < novoTime.getPorcentagemVitoria(); i--){
                 listaTimes.set(i, listaTimes.get(i-1));
             }
             listaTimes.set(i, novoTime);

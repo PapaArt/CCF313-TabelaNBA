@@ -27,7 +27,7 @@ public class telaTabela {
             System.out.print(nomeTime.getVitorias() + " ");
             System.out.print(nomeTime.getDerrotas() + "  ");
             System.out.print(formatador.format((nomeTime.getPorcentagemVitoria())* 100) + "% ");
-            System.out.print(formatador.format(nomeTime.getPontosPorJogo()) + " ");
+            System.out.print(formatador.format(nomeTime.getMediaPontosPorJogo()) + " ");
             System.out.println();
         }
     }
