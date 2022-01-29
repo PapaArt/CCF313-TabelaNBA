@@ -1,7 +1,6 @@
 
 package tabela_nba.controle;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
@@ -25,11 +24,7 @@ public class Tabela_NBA {
 
     public ArrayList<Time> listaTimes;
     private int quantidadeJogos;
-    
-    
-    private String nomesTimes; //implementar depois
-
-    
+       
     public enum Conferencia{
         LESTE, OESTE;
     }
@@ -58,6 +53,15 @@ public class Tabela_NBA {
         this.quantidadeJogos = QTD_JOGOS;
     }
     
+    public Time pesquisa(int idTime){
+        for(Time t : listaTimes){
+            if(t.getId() == idTime){
+                return t;
+            }
+        }
+        return null;
+    }
+    
     // vencedor == 0 para time1 && vencedor == 1 para time2
     public void embates(int idTime1, int idTime2, int vencedor){
         if(vencedor < 0 || vencedor > 1){
@@ -65,26 +69,27 @@ public class Tabela_NBA {
             
             return;
         }
-        
-        for(Time nomeTime : listaTimes){
-            if(idTime1 == nomeTime.getId()){
-                if(vencedor == 0){
-                    nomeTime.incrementaVitorias();
-                    nomeTime.incrementaJogos();
+        if((pesquisa(idTime1) != null)&& (pesquisa(idTime2) != null)){
+            for(Time nomeTime : listaTimes){
+                if(idTime1 == nomeTime.getId()){
+                    if(vencedor == 0){
+                        nomeTime.incrementaVitorias();
+                        nomeTime.incrementaJogos();
+                    }
+                    else{
+                        nomeTime.incrementaDerrotas();
+                        nomeTime.incrementaJogos();
+                    }
                 }
-                else{
-                    nomeTime.incrementaDerrotas();
-                    nomeTime.incrementaJogos();
-                }
-            }
-            else if(idTime2 == nomeTime.getId()){
-                if(vencedor == 1){
-                    nomeTime.incrementaVitorias();
-                    nomeTime.incrementaJogos();
-                }
-                else{
-                    nomeTime.incrementaDerrotas();
-                    nomeTime.incrementaJogos();
+                else if(idTime2 == nomeTime.getId()){
+                    if(vencedor == 1){
+                        nomeTime.incrementaVitorias();
+                        nomeTime.incrementaJogos();
+                    }
+                    else{
+                        nomeTime.incrementaDerrotas();
+                        nomeTime.incrementaJogos();
+                    }
                 }
             }
         }
