@@ -40,7 +40,7 @@ public class telaTabela {
         tabela.addTime(new Time("Heat", Time.ConferenciaTime.LESTE, Time.Divisao.SUDESTE,2));
         tabela.addTime(new Time("Bucks", Time.ConferenciaTime.LESTE, Time.Divisao.CENTRAL,3));
         tabela.addTime(new Time("Celtics", Time.ConferenciaTime.LESTE, Time.Divisao.ATLANTICO,4));
-        tabela.addTime(new Time("Hornets", Time.ConferenciaTime.LESTE, Time.Divisao.ATLANTICO,5));
+        tabela.addTime(new Time("Hornets", Time.ConferenciaTime.LESTE, Time.Divisao.SUDESTE,5));
         
         tabela.confrontos();
     }
