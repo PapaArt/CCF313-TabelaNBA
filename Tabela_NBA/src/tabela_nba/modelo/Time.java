@@ -70,7 +70,7 @@ public class Time {
         return porcentagemVitoria;
     }
 
-    public double getPontosPorJogo() {
+    public double getMediaPontosPorJogo() {
         return this.pontosPorJogo;
     }
 
@@ -102,9 +102,10 @@ public class Time {
         this.posicao = posicao;
     }
 
-    public void setPontosPorJogo(double pontosTotais) {
+    public void setPontosPorJogo(double pontosPorPartida) {
         
-        this.pontosPorJogo = pontosTotais/this.jogos;
+        this.pontosPorJogo += pontosPorPartida;
+        this.pontosPorJogo = this.pontosPorJogo/this.jogos;
     }
    
 }
