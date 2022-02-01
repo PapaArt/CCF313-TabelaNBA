@@ -1,7 +1,6 @@
 
 package tabela_nba.controle;
 
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 import tabela_nba.modelo.Time;
@@ -14,7 +13,6 @@ import tabela_nba.modelo.Time;
  */
 public class Tabela_NBA {
     
-    Scanner scan = new Scanner(System.in);
     
     Random rand = new Random();
     
