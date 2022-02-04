@@ -29,7 +29,6 @@ public class Tabela_NBA {
         LESTE, OESTE;
     }
     
-    
     private Conferencia conferencia;
     
     public Tabela_NBA(Conferencia nome){
