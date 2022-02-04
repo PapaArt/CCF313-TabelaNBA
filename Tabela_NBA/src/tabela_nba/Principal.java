@@ -1,10 +1,6 @@
 
 package tabela_nba;
 
-import tabela_nba.controle.Tabela_NBA;
-import tabela_nba.controle.Tabela_NBA.Conferencia;
-import tabela_nba.modelo.Time.ConferenciaTime;
-import tabela_nba.modelo.Time;
 import tabela_nba.visao.telaTabela;
 
 /**

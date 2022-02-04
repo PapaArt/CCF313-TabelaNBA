@@ -12,7 +12,7 @@ import tabela_nba.modelo.Time;
 public class telaTabela {
     Tabela_NBA tabela = new Tabela_NBA(Conferencia.LESTE);
     
-    
+    //PASSAR COMO PARAMENTRO O tabela
     public void listarClassificacao(){
         
         tabela.ordenaPosicao();
@@ -33,6 +33,7 @@ public class telaTabela {
         }
     }
     
+    //PASSAR COMO PARAMENTRO O tabela
     public void telaInserir(){
         
         tabela.addTime(new Time("Bulls", Time.ConferenciaTime.LESTE, Time.Divisao.CENTRAL,0));
