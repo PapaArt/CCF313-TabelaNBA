@@ -4,10 +4,29 @@
  */
 package tabela_nba.persistencia.mysql;
 
+import tabela_nba.controle.Tabela_NBA;
+import tabela_nba.modelo.Time;
+import tabela_nba.persistencia.interfac.ITimeDAO;
+
 /**
  *
  * @author artur
  */
-public class TimeDAOmysql {
+public class TimeDAOmysql implements ITimeDAO {
+
+    @Override
+    public Time getTime(Time id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Time getTimeDivisao(Time.Divisao divisao) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Time getTimeConferencia(Tabela_NBA.Conferencia conferencia) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
