@@ -3,6 +3,7 @@ package tabela_nba.controle;
 
 import java.util.ArrayList;
 import java.util.Random;
+import org.apache.log4j.Logger;
 import tabela_nba.modelo.Time;
 
 
@@ -12,7 +13,8 @@ import tabela_nba.modelo.Time;
  * @author vinicius
  */
 public class Tabela_NBA {
-    
+    private static final Logger LOGGER = Logger.getLogger("NBALogger");
+
     
     Random rand = new Random();
     
@@ -62,8 +64,7 @@ public class Tabela_NBA {
     // vencedor == 0 para time1 && vencedor == 1 para time2
     public void embates(int idTime1, int idTime2, int vencedor){
         if(vencedor < 0 || vencedor > 1){
-            System.err.println("Insira um time vencedor válido!");
-            
+            LOGGER.error("Insira um time vencedor válido!");            
             return;
         }
         if((pesquisa(idTime1) != null)&& (pesquisa(idTime2) != null)){
