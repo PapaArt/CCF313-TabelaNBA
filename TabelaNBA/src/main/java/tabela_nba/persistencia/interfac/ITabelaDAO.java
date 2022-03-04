@@ -4,8 +4,8 @@
  */
 package tabela_nba.persistencia.interfac;
 
-import tabela_nba.controle.Tabela_NBA;
-import tabela_nba.controle.Tabela_NBA.Conferencia;
+import tabela_nba.controle.tabela_NBA;
+import tabela_nba.controle.tabela_NBA.conferencia;
 
 /**
  *
@@ -13,6 +13,6 @@ import tabela_nba.controle.Tabela_NBA.Conferencia;
  */
 public interface ITabelaDAO {
     
-    Tabela_NBA getTabela(Conferencia nome);
+    tabela_NBA getTabela(conferencia nome);
     
 }

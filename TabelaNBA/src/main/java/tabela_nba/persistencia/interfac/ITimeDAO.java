@@ -1,12 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
+
 package tabela_nba.persistencia.interfac;
 
-import tabela_nba.controle.Tabela_NBA.Conferencia;
+import tabela_nba.controle.tabela_NBA.conferencia;
 import tabela_nba.modelo.Time;
-import tabela_nba.modelo.Time.Divisao;
+import tabela_nba.modelo.Time.conferenciaTime;
+import tabela_nba.modelo.Time.divisao;
 
 /**
  *
@@ -14,9 +12,8 @@ import tabela_nba.modelo.Time.Divisao;
  */
 public interface ITimeDAO {
     
-    Time getTime(Time id);
-    Time getTimeDivisao(Divisao divisao);
-    Time getTimeConferencia(Conferencia conferencia);
-    
-    
+    String getTime(int id);
+    divisao getTimeDivisao(String nomeTime);
+    conferenciaTime getTimeConferencia(String nomeTime);
+
 }

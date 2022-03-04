@@ -24,19 +24,19 @@ public class Time {
     private int posicao;
     private int id;
 
-    public enum Divisao{
+    public enum divisao{
         ATLANTICO, CENTRAL, SUDESTE, NOROESTE, PACIFICO, SUDOESTE;
     }
     
     
-    public enum ConferenciaTime{
+    public enum conferenciaTime{
         LESTE, OESTE;
     }
     
-    private ConferenciaTime conferencia;
-    private Divisao divisao;
+    private conferenciaTime conferencia;
+    private divisao divisao;
     
-    public Time(String nomeTime, ConferenciaTime conferencia, Divisao divisao, int idTime){
+    public Time(String nomeTime, conferenciaTime conferencia, divisao divisao, int idTime){
         this.nomeTime = nomeTime;
         this.vitorias = 0;
         this.derrotas = 0;
@@ -77,7 +77,7 @@ public class Time {
         return porcentagemVitoria;
     }
     
-    public Divisao getDivisao(){
+    public divisao getDivisao(){
         return divisao;
     }
     
