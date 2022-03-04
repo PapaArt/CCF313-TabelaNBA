@@ -2,13 +2,13 @@
 package tabela_nba.persistencia.local;
 
 import java.util.ArrayList;
-import tabela_nba.controle.tabela_NBA;
 import tabela_nba.modelo.Time;
 import tabela_nba.persistencia.interfac.ITimeDAO;
 
 /**
  *
  * @author artur
+ * @author vinicius
  */
 public class TimeDAO implements ITimeDAO {
     private String nomeTime;
@@ -22,7 +22,7 @@ public class TimeDAO implements ITimeDAO {
     private Time.conferenciaTime conferencia;
     private Time.divisao divisao;
     
-    private Time time;
+    private final Time time;
     private ArrayList<Time> listaTimes;
     
     public TimeDAO(String nomeTime, Time.conferenciaTime conferencia, Time.divisao divisao, int idTime){
@@ -33,7 +33,7 @@ public class TimeDAO implements ITimeDAO {
     @Override
     public Time.divisao getTimeDivisao(String nomeTime) {
         for (Time t : listaTimes) {
-            if(t.getNomeTime() == nomeTime){
+            if(t.getNomeTime() == null ? nomeTime == null : t.getNomeTime().equals(nomeTime)){
                 return t.getDivisao();
             }
         }
@@ -42,19 +42,22 @@ public class TimeDAO implements ITimeDAO {
 
     @Override
     public Time.conferenciaTime getTimeConferencia(String nomeTime) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String getTime(int id) {
-        for (Time time : listaTimes) {
-            if(time.getId() == id){
-                return time.getNomeTime();
+        for (Time t : listaTimes) {
+            if(t.getNomeTime() == null ? nomeTime == null : t.getNomeTime().equals(nomeTime)){
+                return t.getConferencia() ;
             }
         }
         return null;
     }
-    
-    
+
+    @Override
+    public String getTime(int id) {
+        for (Time t : listaTimes) {
+            if(t.getId() == id){
+                return t.getNomeTime();
+            }
+        }
+        return null;
+    }
     
 }

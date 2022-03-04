@@ -1,10 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package tabela_nba.persistencia.mysql;
 
-import tabela_nba.controle.tabela_NBA;
 import tabela_nba.modelo.Time;
 import tabela_nba.persistencia.interfac.ITimeDAO;
 
@@ -15,18 +11,20 @@ import tabela_nba.persistencia.interfac.ITimeDAO;
 public class TimeDAOmysql implements ITimeDAO {
 
     @Override
-    public Time getTime(Time id) {
+    public String getTime(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Time getTimeDivisao(Time.divisao divisao) {
+    public Time.divisao getTimeDivisao(String nomeTime) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Time getTimeConferencia(tabela_NBA.conferencia conferencia) {
+    public Time.conferenciaTime getTimeConferencia(String nomeTime) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+ 
     
 }

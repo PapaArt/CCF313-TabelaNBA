@@ -89,6 +89,10 @@ public class Time {
         return posicao;
     }
 
+    public conferenciaTime getConferencia() {
+        return conferencia;
+    }
+    
     public int getId() {
         return id;
     }
