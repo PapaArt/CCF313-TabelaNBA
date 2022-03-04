@@ -12,7 +12,7 @@ import tabela_nba.modelo.Time;
  * @author artur
  * @author vinicius
  */
-public class Tabela_NBA {
+public class tabela_NBA {
     private static final Logger LOGGER = Logger.getLogger("NBALogger");
 
     
@@ -25,13 +25,13 @@ public class Tabela_NBA {
     public ArrayList<Time> listaTimes;
     private int quantidadeJogos;
        
-    public enum Conferencia{
+    public enum conferencia{
         LESTE, OESTE;
     }
     
-    private Conferencia conferencia;
+    private conferencia conferencia;
     
-    public Tabela_NBA(Conferencia nome){
+    public tabela_NBA(conferencia nome){
         listaTimes = new ArrayList();
         this.conferencia = nome;
     }
@@ -40,11 +40,11 @@ public class Tabela_NBA {
         listaTimes.add(time);
     }
     
-    public void mudarConferencia(Conferencia novaConferencia){
+    public void mudarConferencia(conferencia novaConferencia){
         this.conferencia = novaConferencia;
     }
 
-    public Conferencia getConferencia() {
+    public conferencia getConferencia() {
         return conferencia;
     }
 
@@ -125,7 +125,7 @@ public class Tabela_NBA {
         
     
 
-    public void setConferencia(Conferencia conferencia) {
+    public void setConferencia(conferencia conferencia) {
         this.conferencia = conferencia;
     }
     
