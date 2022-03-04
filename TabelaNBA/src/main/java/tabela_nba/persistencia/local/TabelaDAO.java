@@ -13,7 +13,7 @@ import tabela_nba.visao.telaTabela;
  * @author vinicius
  */
 public class TabelaDAO implements ITabelaDAO{
-    private tabela_NBA listaTabelas;
+    private final tabela_NBA listaTabelas;
     public ArrayList<Time> listaTimes;
     private tabela_NBA.conferencia conferencia;
     telaTabela tela;
