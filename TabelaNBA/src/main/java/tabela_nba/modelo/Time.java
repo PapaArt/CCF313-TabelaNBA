@@ -16,6 +16,8 @@ public class Time {
     private int derrotas;
     
     private int jogos;
+    private int jogosDiv[];
+    private int jogosConf[];
     //private int jogosAtras; // 0 = sem jogos atrás
         
     private double porcentagemVitoria;
@@ -46,6 +48,9 @@ public class Time {
         this.id = idTime;
         this.conferencia = conferencia;
         this.divisao = divisao;
+        this.jogosDiv = new int[4];
+        this.jogosConf = new int[10];
+        
     }
     
     public void defineNomeTime(String time){
