@@ -14,6 +14,7 @@ public class Principal {
         telaTabela tela = new telaTabela();
         
         tela.telaInserir();
+        
         tela.listarClassificacao();
 
     }
