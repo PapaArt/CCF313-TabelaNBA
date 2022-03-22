@@ -2,10 +2,10 @@ package tabela_nba.persistencia.local;
 
 import java.util.Random;
 import org.apache.log4j.Logger;
-import tabela_nba.controle.tabela_NBA;
+import tabela_nba.controle.TabelaNBA;
 import tabela_nba.modelo.Time;
+import tabela_nba.visao.TelaTabela;
 import tabela_nba.persistencia.interfac.ITabelaDAO;
-import tabela_nba.visao.telaTabela;
 
 /**
  *
@@ -14,14 +14,14 @@ import tabela_nba.visao.telaTabela;
  */
 public class TabelaDAO implements ITabelaDAO {
 
-    public tabela_NBA listaTabelas;
-    private telaTabela tela;
+    public TabelaNBA listaTabelas;
+    private TelaTabela tela;
     private static final Logger LOGGER = Logger.getLogger("NBALogger");
 
     Random rand = new Random();
 
-    public TabelaDAO(tabela_NBA.conferencia nome) {
-        listaTabelas = new tabela_NBA(nome);
+    public TabelaDAO(TabelaNBA.conferencia nome) {
+        listaTabelas = new TabelaNBA(nome);
     }
 
     @Override

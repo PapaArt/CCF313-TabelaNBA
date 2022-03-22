@@ -10,7 +10,7 @@ import tabela_nba.modelo.Time;
  * @author artur
  * @author vinicius
  */
-public class tabela_NBA {
+public class TabelaNBA {
 
     private static final Logger LOGGER = Logger.getLogger("NBALogger");
 
@@ -28,7 +28,7 @@ public class tabela_NBA {
 
     private conferencia conferencia;
 
-    public tabela_NBA(conferencia nome) {
+    public TabelaNBA(conferencia nome) {
         listaTimes = new ArrayList();
         this.conferencia = nome;
     }

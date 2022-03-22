@@ -2,7 +2,7 @@ package tabela_nba.visao;
 
 import java.text.DecimalFormat;
 import org.apache.log4j.Logger;
-import static tabela_nba.controle.tabela_NBA.conferencia;
+import static tabela_nba.controle.TabelaNBA.conferencia;
 import tabela_nba.modelo.Time;
 import tabela_nba.persistencia.local.TabelaDAO;
 
@@ -10,7 +10,7 @@ import tabela_nba.persistencia.local.TabelaDAO;
  *
  * @author vinicius
  */
-public class telaTabela {
+public class TelaTabela {
 
     TabelaDAO tabela = new TabelaDAO(conferencia.LESTE);
     private static final Logger LOGGER = Logger.getLogger("NBALogger");
