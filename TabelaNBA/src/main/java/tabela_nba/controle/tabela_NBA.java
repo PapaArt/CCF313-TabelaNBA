@@ -98,11 +98,10 @@ public class tabela_NBA {
         // com as regras da NBA de sorteio, decidir metodo para vitoria/derrota
         // e decidir metodo de parada
         /**
-         * 4 jogos contra os outros 4 adversários da divisão (4×4=16 jogos) 4
-         * jogos contra 6 adversários da conferência (fora da divisão) (4×6=24
-         * jogos) 3 jogos contra as restantes 4 equipas da conferência (3×4=12
-         * jogos) 2 jogos contra equipas da conferência adversária (2×15=30
-         * jogos)
+         * 4 jogos contra os outros 4 adversários da divisão (4×4=16 jogos) 
+         * 4 jogos contra 6 adversários da conferência (fora da divisão) (4×6=24jogos) 
+         * 3 jogos contra as restantes 4 equipas da conferência (3×4=12)
+         * 2 jogos contra equipas da conferência adversária (2×15=30 jogos)
          */
         int i = rand.nextInt(QUANTIDADE_TIMES);
         int loop;
