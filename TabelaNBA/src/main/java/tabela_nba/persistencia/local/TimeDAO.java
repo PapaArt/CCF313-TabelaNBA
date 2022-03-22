@@ -12,13 +12,6 @@ import tabela_nba.persistencia.interfac.ITimeDAO;
  */
 public class TimeDAO implements ITimeDAO {
     private String nomeTime;
-    private int vitorias;
-    private int derrotas;
-    private int jogos;
-    private double porcentagemVitoria;
-    private double pontosPorJogo;
-    private int posicao;
-    private int id;
     private Time.conferenciaTime conferencia;
     private Time.divisao divisao;
     
