@@ -16,6 +16,7 @@ public class Principal {
         tela.telaInserir();
         
         tela.listarClassificacao();
-
+        
+        
     }
 }
