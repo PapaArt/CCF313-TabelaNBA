@@ -175,141 +175,202 @@ public class TelaTabela {
         Scanner scan = new Scanner(System.in);
         Scanner in = new Scanner(System.in);
         int qtd;
-        int idTime;
+        int idTime = 0;
         String nomeTime;
         String conferenciaTime;
         String divisaoTime;
 
-        int win, lose, game;
+        String vitoria;
+        String derrota;
+        String pontosPorJogo;
+
+        int win = 0;
+        int lose = 0;
+        int game;
         double ppj;
+
+        boolean continua = true;
 
         System.out.print("Digite quantos times participarão do campeonato: ");
         qtd = scan.nextInt();
+
         for (int i = 0; i < qtd; i++) {
             System.out.println("Insira o nome do time: ");
             nomeTime = in.nextLine();
-            
-            System.out.println("Insira a conferencia do time: ");
-            conferenciaTime = in.nextLine();
+            do {
+                System.out.println("Insira a conferencia do time: ");
+                conferenciaTime = in.nextLine();
+                if ("LESTE".equals(conferenciaTime) || "OESTE".equals(conferenciaTime)) {
+                    continua = false;
+                } else {
+                    System.out.println("");
+                    System.err.println("ERRO!!! Insira uma conferencia válida!!! Válidas -> LESTE e OESTE. Em maiúsculo");
+                }
+            } while (continua);
 
             System.out.println("Insira a divisao do time: ");
             divisaoTime = in.nextLine();
 
-            System.out.println("Insira o id do time: ");
-            idTime = in.nextInt();
-
-            
             if ("LESTE".equals(conferenciaTime)) {
-                if ("ATLANTICO".equals(divisaoTime)) {
-                    tabela.listaTabelas.addTime(new Time(nomeTime,
-                            Time.conferenciaTime.LESTE, Time.divisao.ATLANTICO,
-                            idTime));
+                if (null != divisaoTime) {
+                    if ("ATLANTICO".equals(divisaoTime)) {
+                        tabela.listaTabelas.addTime(new Time(nomeTime,
+                                Time.conferenciaTime.LESTE, Time.divisao.ATLANTICO,
+                                idTime));
+                        System.out.println("Digite a quantidade de vitorias do seu time");
+                        vitoria = in.nextLine();
+                        win = Integer.valueOf(vitoria);
+                        tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
+                        System.out.println("Digite a quantidade de derrotas do seu time");
+                        derrota = in.nextLine();
+                        lose = Integer.valueOf(derrota);
+                        tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
+                        game = win + lose;
+                        tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
+                        System.out.println("Digite a quantidade de pontos por jogo do seu time");
+                        pontosPorJogo = in.nextLine();
+                        ppj = Double.valueOf(pontosPorJogo);
+                        tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
+                        idTime += 1;
+                    }
+                    else if ("CENTRAL".equals(divisaoTime)) {
+                        tabela.listaTabelas.addTime(new Time(nomeTime,
+                                Time.conferenciaTime.LESTE, Time.divisao.CENTRAL,
+                                idTime));
+                        System.out.println("Digite a quantidade de vitorias do seu time");
+                        vitoria = in.nextLine();
+                        win = Integer.valueOf(vitoria);
+                        tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
+                        System.out.println("Digite a quantidade de derrotas do seu time");
+                        derrota = in.nextLine();
+                        lose = Integer.valueOf(derrota);
+                        tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
+                        game = win + lose;
+                        tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
+                        System.out.println("Digite a quantidade de pontos por jogo do seu time");
+                        pontosPorJogo = in.nextLine();
+                        ppj = Double.valueOf(pontosPorJogo);
+                        tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
+                        idTime += 1;
+                    }
+                    else if ("SUDESTE".equals(divisaoTime)) {
+                        tabela.listaTabelas.addTime(new Time(nomeTime,
+                                Time.conferenciaTime.LESTE, Time.divisao.SUDESTE,
+                                idTime));
+                        System.out.println("Digite a quantidade de vitorias do seu time");
+                        vitoria = in.nextLine();
+                        win = Integer.valueOf(vitoria);
+                        tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
+                        System.out.println("Digite a quantidade de derrotas do seu time");
+                        derrota = in.nextLine();
+                        lose = Integer.valueOf(derrota);
+                        tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
+                        game = win + lose;
+                        tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
+                        System.out.println("Digite a quantidade de pontos por jogo do seu time");
+                        pontosPorJogo = in.nextLine();
+                        ppj = Double.valueOf(pontosPorJogo);
+                        tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
+                        idTime += 1;
+                    } else {
+                        do {
+                            System.out.println("--------------------------------------------");
+                            System.out.println("Insira a divisao do time: ");
+                            divisaoTime = in.nextLine();
+                            if ("ATLANTICO".equals(divisaoTime) || "CENTRAL".equals(divisaoTime) || "SUDESTE".equals(divisaoTime)) {
+                                continua = false;
 
-                    System.out.println("Digite a quantidade de vitorias do seu time");
-                    win = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
-                    System.out.println("Digite a quantidade de derrotas do seu time");
-                    lose = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
-                    System.out.println("Digite a quantidade de jogos do seu time");
-                    game = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
-                    System.out.println("Digite a quantidade de pontos por jogo do seu time");
-                    ppj = scan.nextDouble();
-                    tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
+                            } else {
+                                System.out.println("");
+                                System.err.println("ERRO!!! Insira uma divisão válida!!! \n"
+                                        + "Validos-> ATLANTICO, CENTRAL e SUDESTE. Em maiúsculo");
+                            }
+                        } while (continua);
+                    }
                 }
-                if ("CENTRAL".equals(divisaoTime)) {
-                    tabela.listaTabelas.addTime(new Time(nomeTime,
-                            Time.conferenciaTime.LESTE, Time.divisao.CENTRAL,
-                            idTime));
-                    System.out.println("Digite a quantidade de vitorias do seu time");
-                    win = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
-                    System.out.println("Digite a quantidade de derrotas do seu time");
-                    lose = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
-                    System.out.println("Digite a quantidade de jogos do seu time");
-                    game = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
-                    System.out.println("Digite a quantidade de pontos por jogo do seu time");
-                    ppj = scan.nextDouble();
-                    tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
-                }
-                if ("SUDESTE".equals(divisaoTime)) {
-                    tabela.listaTabelas.addTime(new Time(nomeTime,
-                            Time.conferenciaTime.LESTE, Time.divisao.SUDESTE,
-                            idTime));
-                    System.out.println("Digite a quantidade de vitorias do seu time");
-                    win = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
-                    System.out.println("Digite a quantidade de derrotas do seu time");
-                    lose = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
-                    System.out.println("Digite a quantidade de jogos do seu time");
-                    game = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
-                    System.out.println("Digite a quantidade de pontos por jogo do seu time");
-                    ppj = scan.nextDouble();
-                    tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
-                }
-
             } else if ("OESTE".equals(conferenciaTime)) {
-                if ("NOROESTE".equals(divisaoTime)) {
-                    tabela.listaTabelas.addTime(new Time(nomeTime,
-                            Time.conferenciaTime.OESTE, Time.divisao.NOROESTE,
-                            idTime));
-                    System.out.println("Digite a quantidade de vitorias do seu time");
-                    win = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
-                    System.out.println("Digite a quantidade de derrotas do seu time");
-                    lose = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
-                    System.out.println("Digite a quantidade de jogos do seu time");
-                    game = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
-                    System.out.println("Digite a quantidade de pontos por jogo do seu time");
-                    ppj = scan.nextDouble();
-                    tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
-                }
-                if ("PACIFICO".equals(divisaoTime)) {
-                    tabela.listaTabelas.addTime(new Time(nomeTime,
-                            Time.conferenciaTime.OESTE, Time.divisao.PACIFICO,
-                            idTime));
-                    System.out.println("Digite a quantidade de vitorias do seu time");
-                    win = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
-                    System.out.println("Digite a quantidade de derrotas do seu time");
-                    lose = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
-                    System.out.println("Digite a quantidade de jogos do seu time");
-                    game = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
-                    System.out.println("Digite a quantidade de pontos por jogo do seu time");
-                    ppj = scan.nextDouble();
-                    tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
-                }
-                if ("SUDOESTE".equals(divisaoTime)) {
-                    tabela.listaTabelas.addTime(new Time(nomeTime,
-                            Time.conferenciaTime.OESTE, Time.divisao.SUDOESTE,
-                            idTime));
-                    System.out.println("Digite a quantidade de vitorias do seu time");
-                    win = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
-                    System.out.println("Digite a quantidade de derrotas do seu time");
-                    lose = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
-                    System.out.println("Digite a quantidade de jogos do seu time");
-                    game = scan.nextInt();
-                    tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
-                    System.out.println("Digite a quantidade de pontos por jogo do seu time");
-                    ppj = scan.nextDouble();
-                    tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
-                }
+                if (null != divisaoTime) {
+                    if ("NOROESTE".equals(divisaoTime)) {
+                        tabela.listaTabelas.addTime(new Time(nomeTime,
+                                Time.conferenciaTime.OESTE, Time.divisao.NOROESTE,
+                                idTime));
+                        System.out.println("Digite a quantidade de vitorias do seu time");
+                        vitoria = in.nextLine();
+                        win = Integer.valueOf(vitoria);
+                        tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
+                        System.out.println("Digite a quantidade de derrotas do seu time");
+                        derrota = in.nextLine();
+                        lose = Integer.valueOf(derrota);
+                        tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
+                        game = win + lose;
+                        tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
+                        System.out.println("Digite a quantidade de pontos por jogo do seu time");
+                        pontosPorJogo = in.nextLine();
+                        ppj = Double.valueOf(pontosPorJogo);
+                        tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
+                        idTime += 1;
+                    }
+                    else if ("PACIFICO".equals(divisaoTime)) {
+                        tabela.listaTabelas.addTime(new Time(nomeTime,
+                                Time.conferenciaTime.OESTE, Time.divisao.PACIFICO,
+                                idTime));
+                        System.out.println("Digite a quantidade de vitorias do seu time");
+                        vitoria = in.nextLine();
+                        win = Integer.valueOf(vitoria);
+                        tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
+                        System.out.println("Digite a quantidade de derrotas do seu time");
+                        derrota = in.nextLine();
+                        lose = Integer.valueOf(derrota);
+                        tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
+                        game = win + lose;
+                        tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
+                        System.out.println("Digite a quantidade de pontos por jogo do seu time");
+                        pontosPorJogo = in.nextLine();
+                        ppj = Double.valueOf(pontosPorJogo);
+                        tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
+                        idTime += 1;
+                    }
+                    else if ("SUDOESTE".equals(divisaoTime)) {
+                        tabela.listaTabelas.addTime(new Time(nomeTime,
+                                Time.conferenciaTime.OESTE, Time.divisao.SUDOESTE,
+                                idTime));
+                        System.out.println("Digite a quantidade de vitorias do seu time");
+                        vitoria = in.nextLine();
+                        win = Integer.valueOf(vitoria);
+                        tabela.listaTabelas.listaTimes.get(idTime).setVitorias(win);
+                        System.out.println("Digite a quantidade de derrotas do seu time");
+                        derrota = in.nextLine();
+                        lose = Integer.valueOf(derrota);
+                        tabela.listaTabelas.listaTimes.get(idTime).setDerrotas(lose);
+                        game = win + lose;
+                        tabela.listaTabelas.listaTimes.get(idTime).setJogos(game);
+                        System.out.println("Digite a quantidade de pontos por jogo do seu time");
+                        pontosPorJogo = in.nextLine();
+                        ppj = Double.valueOf(pontosPorJogo);
+                        tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
+                        idTime += 1;
+                    } else {
+                        do {
+                            System.out.println("--------------------------------------------");
+                            System.out.println("Insira a divisao do time: ");
+                            divisaoTime = in.nextLine();
+                            if ("NOROESTE".equals(divisaoTime) || "PACIFICO".equals(divisaoTime) || "SUDOESTE".equals(divisaoTime)) {
+                                continua = false;
 
+                            } else {
+                                System.out.println("");
+                                System.err.println("ERRO!!! Insira uma divisão válida!!! \n"
+                                        + "Validos-> NOROESTE, PACIFICO e SUDOESTE. Em maiúsculo");
+                            }
+                        } while (continua);
+                    }
+
+                }
             }
-        }
-        listarClassificacao();
 
+            listarClassificacao();
+
+        }
     }
 
     public void menuInicial() {
