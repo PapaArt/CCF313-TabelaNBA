@@ -94,12 +94,18 @@ public class TelaTabela {
             conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nba", "root", "password");
             //Consulta SQL feita aqui
             ResultSet rsTabela = conexao.createStatement().executeQuery("SELECT * FROM times");
+            LOGGER.info("Inserindo times.");
             while(rsTabela.next()){
                 if("LESTE".equals(rsTabela.getString("conf"))){
                     if("ATLANTICO".equals(rsTabela.getString("divi"))){
                         tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"), 
                                 Time.conferenciaTime.LESTE, Time.divisao.ATLANTICO, 
                                 Integer.parseInt(rsTabela.getString("idTime"))));
+                        int win, lose, games, ppj;
+                        win = Integer.parseInt(rsTabela.getString("vitorias"));
+                        lose = Integer.parseInt(rsTabela.getString("derrotas"));
+                        games = Integer.parseInt(rsTabela.getString("jogos"));
+                        ppj = Integer.parseInt(rsTabela.getString("pontosPorJogo"));
                         
                     }
                     if("CENTRAL".equals(rsTabela.getString("divi"))){
@@ -159,7 +165,7 @@ public class TelaTabela {
                                 Integer.parseInt(rsTabela.getString("idTime"))));
                     }
                 }
-                
+                LOGGER.info("Times adicionados.");
             }
         } catch (ClassNotFoundException ex) {
             System.out.println("Driver do banco não localizado!!!");
