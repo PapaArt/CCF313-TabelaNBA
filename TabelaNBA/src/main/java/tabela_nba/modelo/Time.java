@@ -143,4 +143,8 @@ public class Time {
         return pontosPorJogo;
     }
 
+    public void setPontosPorJogo(double pontosPorJogo) {
+        this.pontosPorJogo = pontosPorJogo;
+    }
+    
 }
