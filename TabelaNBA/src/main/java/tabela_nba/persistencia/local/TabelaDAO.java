@@ -51,21 +51,21 @@ public class TabelaDAO implements ITabelaDAO {
                     if (vencedor == 0) {
                         nomeTime.incrementaVitorias();
                         nomeTime.incrementaJogos();
-                        nomeTime.setPontosPorJogo(rand.nextInt(20) + 100);
+                        nomeTime.somaPontosPorJogo(rand.nextInt(20) + 100);
                     } else {
                         nomeTime.incrementaDerrotas();
                         nomeTime.incrementaJogos();
-                        nomeTime.setPontosPorJogo(rand.nextInt(10) + 80);
+                        nomeTime.somaPontosPorJogo(rand.nextInt(10) + 80);
                     }
                 } else if (idTime2 == nomeTime.getId()) {
                     if (vencedor == 1) {
                         nomeTime.incrementaVitorias();
                         nomeTime.incrementaJogos();
-                        nomeTime.setPontosPorJogo(rand.nextInt(10) + 100);
+                        nomeTime.somaPontosPorJogo(rand.nextInt(10) + 100);
                     } else {
                         nomeTime.incrementaDerrotas();
                         nomeTime.incrementaJogos();
-                        nomeTime.setPontosPorJogo(rand.nextInt(10) + 85);
+                        nomeTime.somaPontosPorJogo(rand.nextInt(10) + 85);
                     }
                 }
             }

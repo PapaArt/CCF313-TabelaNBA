@@ -18,6 +18,7 @@ public class Principal {
         TelaTabela tela = new TelaTabela();
         
         //tela.telaInserir();
+        tela.telaInserirBanco();
         
         //tela.listarClassificacao();
         

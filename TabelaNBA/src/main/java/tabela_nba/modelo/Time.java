@@ -122,9 +122,25 @@ public class Time {
         this.posicao = posicao;
     }
 
-    public void setPontosPorJogo(double pontosPorPartida) {
+    public void somaPontosPorJogo(double pontosPorPartida) {
         
         this.pontosPorJogo += pontosPorPartida;
     }
-   
+
+    public void setVitorias(int vitorias) {
+        this.vitorias = vitorias;
+    }
+
+    public void setDerrotas(int derrotas) {
+        this.derrotas = derrotas;
+    }
+
+    public void setJogos(int jogos) {
+        this.jogos = jogos;
+    }
+
+    public double getPontosPorJogo() {
+        return pontosPorJogo;
+    }
+
 }
