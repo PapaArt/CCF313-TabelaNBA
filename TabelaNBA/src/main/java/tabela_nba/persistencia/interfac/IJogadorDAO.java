@@ -9,5 +9,11 @@ package tabela_nba.persistencia.interfac;
  * @author artur
  */
 public interface IJogadorDAO {
-    
+    public String getName();
+    public double getAltura();
+    public double peso();
+    public double getPPG();
+    public double getRPG();
+    public double getAPG();
+    public double getTS();
 }

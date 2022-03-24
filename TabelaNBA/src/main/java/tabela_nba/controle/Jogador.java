@@ -8,6 +8,6 @@ package tabela_nba.controle;
  *
  * @author artur
  */
-public class Jogadores {
+public class Jogador {
     
 }
