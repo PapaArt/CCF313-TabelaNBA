@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
@@ -273,6 +274,7 @@ public class TelaTabela {
                         tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
                         idTime += 1;
                     } else {
+                        continua = true;
                         do {
                             System.out.println("--------------------------------------------");
                             System.out.println("Insira a divisao do time: ");
@@ -350,6 +352,7 @@ public class TelaTabela {
                         tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
                         idTime += 1;
                     } else {
+                        continua = true;
                         do {
                             System.out.println("--------------------------------------------");
                             System.out.println("Insira a divisao do time: ");
@@ -367,7 +370,8 @@ public class TelaTabela {
 
                 }
             }
-
+            LocalDate current_date = LocalDate.now();
+            anoTabela = String.valueOf(current_date.getYear());
             listarClassificacao();
 
         }
