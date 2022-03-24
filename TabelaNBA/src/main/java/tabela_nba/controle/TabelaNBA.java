@@ -16,9 +16,6 @@ public class TabelaNBA {
 
     Random rand = new Random();
 
-    public static final int QUANTIDADE_TIMES = (int) 30;
-    public static final int QTD_JOGOS = (int) 82;
-
     public ArrayList<Time> listaTimes;
     private int quantidadeJogos;
 
@@ -43,10 +40,6 @@ public class TabelaNBA {
 
     public conferencia getConferencia() {
         return conferencia;
-    }
-
-    public void setQuantidadeJogosTotal() {
-        this.quantidadeJogos = QTD_JOGOS;
     }
 
     public void setConferencia(conferencia conferencia) {
