@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 import org.apache.log4j.Logger;
 import static tabela_nba.controle.TabelaNBA.conferencia;
 import tabela_nba.modelo.Time;
@@ -16,19 +18,29 @@ import tabela_nba.persistencia.local.TabelaDAO;
  */
 public class TelaTabela {
 
-    TabelaDAO tabela = new TabelaDAO(conferencia.LESTE);
+    TabelaDAO tabela = new TabelaDAO(conferencia.GERAL);
     private static final Logger LOGGER = Logger.getLogger("NBALogger");
-
+    public static final String RESET = "\u001B[0m";
+    public static final String AMARELO = "\u001B[33m";
+    public static final String ANSI_VERMELHO = "\u001B [31m";
+    public static final String VERDE = "\u001B[32m";
+    public static final String ANSI_AZUL = "\u001B[34m";
+    public static final String ROXO = "\u001B[35m";
+    public static final String CIANO = "\u001B[36m";
+    public static final String PRETO = "\u001B[30m";
+    public static final String BRANCO = "\u001B[37m";
+    
     //PASSAR COMO PARAMENTRO O tabela
     public void listarClassificacao() {
 
         tabela.ordenaPosicao();
 
         DecimalFormat formatador = new DecimalFormat("0.00");
+        
 
         LOGGER.info("Mostrando classificação.");
 
-        System.out.println("CLASSIFICACAO ");
+        System.out.println("CLASSIFICACAO GERAL");
         System.out.println("Times    V  D  %VIT  PPJ");
         LOGGER.info("Mostrando tabela.");
         for (Time nomeTime : tabela.listaTabelas.listaTimes) {
@@ -37,7 +49,7 @@ public class TelaTabela {
             System.out.print(nomeTime.getVitorias() + " ");
             System.out.print(nomeTime.getDerrotas() + "  ");
             System.out.print(formatador.format((nomeTime.getPorcentagemVitoria()) * 100) + "% ");
-            System.out.print(formatador.format(nomeTime.getMediaPontosPorJogo()) + " ");
+            System.out.print(formatador.format(nomeTime.getPontosPorJogo()) + " ");
             System.out.println("");
         }
         LOGGER.info("Tabela apresentada.");
@@ -239,4 +251,46 @@ public class TelaTabela {
             }
         }
     }
+    
+    public void menuInicial(){
+        System.out.println("");
+        System.out.println("-------------------------- MENU --------------------------");
+        System.out.println("1 - Visualizar tabelas reais");
+        System.out.println("2 - Criar sua própria tabela");
+        System.out.println("3 - Sair");
+    }
+    
+    public void menuDois()throws SQLException{
+        boolean continuar = true;
+        int opcao;
+        Scanner scan = new Scanner(System.in);
+        while (true) {
+            menuInicial();
+            System.out.print("Opção desejada: ");
+            do {
+                try {
+                    opcao = scan.nextInt();
+                    
+                    switch (opcao) {
+                        case 1:
+                            telaInserirBanco();
+                            listarClassificacao();
+                            break;
+                        case 2:
+                            
+                            break;
+                        case 3:
+                            System.exit(0);
+                        default:
+                            System.err.println("ERRO! Essa opção é inválida");
+                    }
+                    continuar = false;
+                } catch (InputMismatchException inputMismatchException) {
+                    System.err.println("ERRO! Insira um valor inteiro");
+                    scan.nextLine();
+                }
+            } while (continuar);
+        }
+    }
+    
 }
