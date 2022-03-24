@@ -28,11 +28,7 @@ public class TabelaDAO implements ITabelaDAO {
 
     @Override
     public void getTabela() {
-        try {
-            tela.listarClassificacao();
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(TabelaDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        tela.listarClassificacao();
     }
 
     @Override
@@ -82,9 +78,16 @@ public class TabelaDAO implements ITabelaDAO {
     public void ordenaPosicao() {
         for (int i = 1; i < listaTabelas.listaTimes.size(); i++) {
             Time novoTime = listaTabelas.listaTimes.get(i);
+            if (listaTabelas.listaTimes.get(i - 1).getPorcentagemVitoria() < novoTime.getPorcentagemVitoria()) {
+                for (int j = i; i > 0; i--) {
+                    listaTabelas.listaTimes.set(i, listaTabelas.listaTimes.get(i - 1));
+                }
+            }
 
-            for (int j = i; i > 0 && listaTabelas.listaTimes.get(i - 1).getPorcentagemVitoria() < novoTime.getPorcentagemVitoria(); i--) {
-                listaTabelas.listaTimes.set(i, listaTabelas.listaTimes.get(i - 1));
+            else if (listaTabelas.listaTimes.get(i - 1).getPorcentagemVitoria() == novoTime.getPorcentagemVitoria()) {
+                for (int j = i; i > 0 && listaTabelas.listaTimes.get(i - 1).getPontosPorJogo() < novoTime.getPontosPorJogo() ; i--) {
+                    listaTabelas.listaTimes.set(i, listaTabelas.listaTimes.get(i - 1));
+                }
             }
             listaTabelas.listaTimes.set(i, novoTime);
             listaTabelas.listaTimes.get(i).setPosicao(i);
