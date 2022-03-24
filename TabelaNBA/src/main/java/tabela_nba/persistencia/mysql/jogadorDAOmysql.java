@@ -8,7 +8,7 @@ import tabela_nba.persistencia.interfac.ITimeDAO;
  *
  * @author artur
  */
-public class TimeDAOmysql implements ITimeDAO {
+public class jogadorDAOmysql implements ITimeDAO {
 
     @Override
     public String getTime(int id) {
