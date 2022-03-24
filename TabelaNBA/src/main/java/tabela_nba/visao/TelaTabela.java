@@ -30,6 +30,8 @@ public class TelaTabela {
     public static final String PRETO = "\u001B[30m";
     public static final String BRANCO = "\u001B[37m";
     
+    private String anoTabela;
+    
     //PASSAR COMO PARAMENTRO O tabela
     public void listarClassificacao() throws SQLException {
         telaInserirBanco();
@@ -39,8 +41,8 @@ public class TelaTabela {
         
 
         LOGGER.info("Mostrando classificação.");
-
-        System.out.println("CLASSIFICACAO GERAL");
+        System.out.println("");
+        System.out.println("CLASSIFICACAO GERAL DO ANO "+ anoTabela);
         System.out.println("Times    V  D  %VIT  PPJ");
         LOGGER.info("Mostrando tabela.");
         for (Time nomeTime : tabela.listaTabelas.listaTimes) {
@@ -54,8 +56,6 @@ public class TelaTabela {
         }
         LOGGER.info("Tabela apresentada.");
         tabela.listaTabelas.listaTimes.clear();
-        System.out.println("");
-        System.out.println("");
     }
 
     public void telaInserirBanco() throws SQLException {
@@ -244,6 +244,10 @@ public class TelaTabela {
                 }
                 LOGGER.info("Times adicionados.");
             }
+            ResultSet rsTabela1 = conexao.createStatement().executeQuery("SELECT periodo FROM anoTabela");
+            while (rsTabela1.next()){
+                anoTabela = rsTabela1.getString("periodo");
+            }
         } catch (ClassNotFoundException ex) {
             System.out.println("Driver do banco não localizado!!!");
         } catch (SQLException ex) {
@@ -254,6 +258,16 @@ public class TelaTabela {
             }
         }
     }
+    
+    public void tabelaPessoal(){
+        System.out.println("");
+        System.out.println("-----------------------------------------------------");
+        System.out.println("Bem vindo ao sistema de criação da sua própria tabela");
+        System.out.println("-----------------------------------------------------");
+        
+        
+    }
+    
         
     public void menuInicial(){
         System.out.println("");
