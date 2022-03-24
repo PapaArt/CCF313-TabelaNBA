@@ -5,8 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import tabela_nba.visao.TelaTabela;
 
 /**
@@ -19,16 +17,16 @@ public class Principal {
     public static void main(String[] args) throws SQLException {
         TelaTabela tela = new TelaTabela();
         
-        tela.telaInserir();
+        //tela.telaInserir();
         
-        tela.listarClassificacao();
+        //tela.listarClassificacao();
         
         Connection conexao = null;
         try {
-            Class.forName("com.mysql.jdbc.Drive");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/enderecobanco", "usuario", "password");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/?user=root", "papa", "password");
             //Consulta SQL feita aqui
-            ResultSet rsTabela = conexao.createStatement().executeQuery("SELECT * FROM tabela");
+            ResultSet rsTabela = conexao.createStatement().executeQuery("SELECT * FROM time");
             while(rsTabela.next()){
                 System.out.println("Time: " + rsTabela.getString("time"));
             }
