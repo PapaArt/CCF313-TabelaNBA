@@ -1,5 +1,9 @@
 package tabela_nba.visao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
 import org.apache.log4j.Logger;
 import static tabela_nba.controle.TabelaNBA.conferencia;
@@ -81,5 +85,26 @@ public class TelaTabela {
         LOGGER.info("Times adicionados.");
 
         //tabela.confrontos();
+    }
+    
+    public void telaInserirBanco() throws SQLException{
+        Connection conexao = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nba", "root", "password");
+            //Consulta SQL feita aqui
+            ResultSet rsTabela = conexao.createStatement().executeQuery("SELECT * FROM times");
+            while(rsTabela.next()){
+                tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"), rsTabela.getString("conf"), rsTabela.getString("divi"), rsTabela.getString("idTime")));
+            }
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Driver do banco não localizado!!!");
+        } catch (SQLException ex) {
+            System.out.println("Erro de conexão com o banco: " +ex.getMessage());
+        }finally{
+            if (conexao != null){
+                conexao.close();
+            }
+        }
     }
 }
