@@ -1,13 +1,8 @@
 tabela_nba/persistencia/interfac/ITimeDAO.class
-tabela_nba/controle/Tabela_NBA$Conferencia.class
-tabela_nba/visao/telaTabela.class
 tabela_nba/persistencia/interfac/ITabelaDAO.class
-tabela_nba/controle/Tabela_NBA.class
-tabela_nba/modelo/Time$Divisao.class
 tabela_nba/Principal.class
 tabela_nba/persistencia/local/TimeDAO.class
 tabela_nba/modelo/Time.class
 tabela_nba/persistencia/mysql/TimeDAOmysql.class
-tabela_nba/modelo/Time$ConferenciaTime.class
 tabela_nba/persistencia/local/TabelaDAO.class
 tabela_nba/persistencia/local/BDLocalSingleton.class
