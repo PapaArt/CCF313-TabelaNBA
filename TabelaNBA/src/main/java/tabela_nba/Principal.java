@@ -20,7 +20,7 @@ public class Principal {
         //tela.telaInserir();
         tela.telaInserirBanco();
         
-        //tela.listarClassificacao();
+        tela.listarClassificacao();
         
     }
 }
