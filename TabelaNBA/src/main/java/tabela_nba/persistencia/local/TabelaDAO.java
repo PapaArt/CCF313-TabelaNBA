@@ -1,6 +1,8 @@
 package tabela_nba.persistencia.local;
 
+import java.sql.SQLException;
 import java.util.Random;
+import java.util.logging.Level;
 import org.apache.log4j.Logger;
 import tabela_nba.controle.TabelaNBA;
 import tabela_nba.modelo.Time;
@@ -26,7 +28,11 @@ public class TabelaDAO implements ITabelaDAO {
 
     @Override
     public void getTabela() {
-        tela.listarClassificacao();
+        try {
+            tela.listarClassificacao();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(TabelaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

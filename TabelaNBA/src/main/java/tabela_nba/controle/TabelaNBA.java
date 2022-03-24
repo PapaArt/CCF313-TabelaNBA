@@ -23,7 +23,7 @@ public class TabelaNBA {
     private int quantidadeJogos;
 
     public enum conferencia {
-        LESTE, OESTE;
+        LESTE, OESTE, GERAL;
     }
 
     private conferencia conferencia;
