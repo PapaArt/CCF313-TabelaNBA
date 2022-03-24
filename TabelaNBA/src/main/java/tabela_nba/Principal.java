@@ -21,23 +21,5 @@ public class Principal {
         
         //tela.listarClassificacao();
         
-        Connection conexao = null;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nba", "root", "password");
-            //Consulta SQL feita aqui
-            ResultSet rsTabela = conexao.createStatement().executeQuery("SELECT * FROM times");
-            while(rsTabela.next()){
-                System.out.println("Time: " + rsTabela.getString("nomeTime"));
-            }
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Driver do banco não localizado!!!");
-        } catch (SQLException ex) {
-            System.out.println("Erro de conexão com o banco: " +ex.getMessage());
-        }finally{
-            if (conexao != null){
-                conexao.close();
-            }
-        }
     }
 }
