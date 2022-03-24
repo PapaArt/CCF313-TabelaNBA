@@ -17,7 +17,7 @@ import tabela_nba.persistencia.local.TabelaDAO;
  * @author vinicius
  */
 public class TelaTabela {
-
+    
     TabelaDAO tabela = new TabelaDAO(conferencia.GERAL);
     private static final Logger LOGGER = Logger.getLogger("NBALogger");
     public static final String RESET = "\u001B[0m";
@@ -31,8 +31,8 @@ public class TelaTabela {
     public static final String BRANCO = "\u001B[37m";
     
     //PASSAR COMO PARAMENTRO O tabela
-    public void listarClassificacao() {
-
+    public void listarClassificacao() throws SQLException {
+        telaInserirBanco();
         tabela.ordenaPosicao();
 
         DecimalFormat formatador = new DecimalFormat("0.00");
@@ -53,6 +53,9 @@ public class TelaTabela {
             System.out.println("");
         }
         LOGGER.info("Tabela apresentada.");
+        tabela.listaTabelas.listaTimes.clear();
+        System.out.println("");
+        System.out.println("");
     }
 
     public void telaInserirBanco() throws SQLException {
@@ -251,7 +254,7 @@ public class TelaTabela {
             }
         }
     }
-    
+        
     public void menuInicial(){
         System.out.println("");
         System.out.println("-------------------------- MENU --------------------------");
@@ -260,7 +263,7 @@ public class TelaTabela {
         System.out.println("3 - Sair");
     }
     
-    public void menuDois()throws SQLException{
+    public void menuDois() throws SQLException{
         boolean continuar = true;
         int opcao;
         Scanner scan = new Scanner(System.in);
@@ -273,7 +276,6 @@ public class TelaTabela {
                     
                     switch (opcao) {
                         case 1:
-                            telaInserirBanco();
                             listarClassificacao();
                             break;
                         case 2:
@@ -292,5 +294,7 @@ public class TelaTabela {
             } while (continuar);
         }
     }
+    
+    
     
 }
