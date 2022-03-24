@@ -152,7 +152,7 @@ public class TelaTabela {
                 }
                 LOGGER.info("Times adicionados.");
             }
-            ResultSet rsTabela1 = conexao.createStatement().executeQuery("SELECT periodo FROM anoTabela");
+            ResultSet rsTabela1 = conexao.createStatement().executeQuery("SELECT periodo FROM times");
             while (rsTabela1.next()){
                 anoTabela = rsTabela1.getString("periodo");
             }
