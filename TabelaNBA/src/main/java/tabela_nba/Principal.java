@@ -8,7 +8,6 @@ import tabela_nba.visao.TelaTabela;
  * @author vinicius
  */
 public class Principal {
-
     public static void main(String[] args) throws SQLException {
         TelaTabela tela = new TelaTabela();
 

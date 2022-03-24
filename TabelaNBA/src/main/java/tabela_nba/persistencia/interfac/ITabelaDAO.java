@@ -1,7 +1,6 @@
 
 package tabela_nba.persistencia.interfac;
 
-import tabela_nba.controle.TabelaNBA.conferencia;
 import tabela_nba.modelo.Time;
 
 /**

@@ -15,7 +15,6 @@ public class TabelaNBA {
     private static final Logger LOGGER = Logger.getLogger("NBALogger");
 
     Random rand = new Random();
-
     public ArrayList<Time> listaTimes;
     private int quantidadeJogos;
 

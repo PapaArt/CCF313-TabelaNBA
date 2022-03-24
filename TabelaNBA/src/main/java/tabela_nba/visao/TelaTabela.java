@@ -20,15 +20,6 @@ public class TelaTabela {
     
     TabelaDAO tabela = new TabelaDAO(conferencia.GERAL);
     private static final Logger LOGGER = Logger.getLogger("NBALogger");
-    public static final String RESET = "\u001B[0m";
-    public static final String AMARELO = "\u001B[33m";
-    public static final String ANSI_VERMELHO = "\u001B [31m";
-    public static final String VERDE = "\u001B[32m";
-    public static final String ANSI_AZUL = "\u001B[34m";
-    public static final String ROXO = "\u001B[35m";
-    public static final String CIANO = "\u001B[36m";
-    public static final String PRETO = "\u001B[30m";
-    public static final String BRANCO = "\u001B[37m";
     
     private String anoTabela;
     
@@ -114,91 +105,8 @@ public class TelaTabela {
                         ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
                     }
-                    if ("NOROESTE".equals(rsTabela.getString("divi"))) {
-                        tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
-                                Time.conferenciaTime.LESTE, Time.divisao.NOROESTE,
-                                Integer.parseInt(rsTabela.getString("idTime"))));
-
-                        win = Integer.parseInt(rsTabela.getString("vitorias"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setVitorias(win);
-                        lose = Integer.parseInt(rsTabela.getString("derrotas"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setDerrotas(lose);
-                        game = Integer.parseInt(rsTabela.getString("jogos"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
-                        ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
-                    }
-                    if ("PACIFICO".equals(rsTabela.getString("divi"))) {
-                        tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
-                                Time.conferenciaTime.LESTE, Time.divisao.PACIFICO,
-                                Integer.parseInt(rsTabela.getString("idTime"))));
-
-                        win = Integer.parseInt(rsTabela.getString("vitorias"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setVitorias(win);
-                        lose = Integer.parseInt(rsTabela.getString("derrotas"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setDerrotas(lose);
-                        game = Integer.parseInt(rsTabela.getString("jogos"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
-                        ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
-                    }
-                    if ("SUDOESTE".equals(rsTabela.getString("divi"))) {
-                        tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
-                                Time.conferenciaTime.LESTE, Time.divisao.SUDOESTE,
-                                Integer.parseInt(rsTabela.getString("idTime"))));
-
-                        win = Integer.parseInt(rsTabela.getString("vitorias"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setVitorias(win);
-                        lose = Integer.parseInt(rsTabela.getString("derrotas"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setDerrotas(lose);
-                        game = Integer.parseInt(rsTabela.getString("jogos"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
-                        ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
-                    }
+                    
                 } else if ("OESTE".equals(rsTabela.getString("conf"))) {
-                    if ("ATLANTICO".equals(rsTabela.getString("divi"))) {
-                        tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
-                                Time.conferenciaTime.OESTE, Time.divisao.ATLANTICO,
-                                Integer.parseInt(rsTabela.getString("idTime"))));
-
-                        win = Integer.parseInt(rsTabela.getString("vitorias"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setVitorias(win);
-                        lose = Integer.parseInt(rsTabela.getString("derrotas"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setDerrotas(lose);
-                        game = Integer.parseInt(rsTabela.getString("jogos"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
-                        ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
-                    }
-                    if ("CENTRAL".equals(rsTabela.getString("divi"))) {
-                        tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
-                                Time.conferenciaTime.OESTE, Time.divisao.CENTRAL,
-                                Integer.parseInt(rsTabela.getString("idTime"))));
-
-                        win = Integer.parseInt(rsTabela.getString("vitorias"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setVitorias(win);
-                        lose = Integer.parseInt(rsTabela.getString("derrotas"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setDerrotas(lose);
-                        game = Integer.parseInt(rsTabela.getString("jogos"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
-                        ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
-                    }
-                    if ("SUDESTE".equals(rsTabela.getString("divi"))) {
-                        tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
-                                Time.conferenciaTime.OESTE, Time.divisao.SUDESTE,
-                                Integer.parseInt(rsTabela.getString("idTime"))));
-
-                        win = Integer.parseInt(rsTabela.getString("vitorias"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setVitorias(win);
-                        lose = Integer.parseInt(rsTabela.getString("derrotas"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setDerrotas(lose);
-                        game = Integer.parseInt(rsTabela.getString("jogos"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
-                        ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
-                        tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
-                    }
                     if ("NOROESTE".equals(rsTabela.getString("divi"))) {
                         tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
                                 Time.conferenciaTime.OESTE, Time.divisao.NOROESTE,
