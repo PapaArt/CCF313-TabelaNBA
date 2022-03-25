@@ -21,7 +21,7 @@ import tabela_nba.persistencia.local.TabelaDAO;
 public class TelaTabela {
 
     TabelaDAO tabela = new TabelaDAO(conferencia.GERAL);
-    private Jogador player;
+    Jogador player = new Jogador();
     private static final Logger LOGGER = Logger.getLogger("NBALogger");
 
     private String anoTabela;
@@ -391,6 +391,7 @@ public class TelaTabela {
         System.out.println("");
         System.out.println("-------------------------- JOGADORES --------------------------");
         for(int i = 0; i < 5; i++){
+            System.out.println("");
             System.out.println("Id do jogador: "+i);
             System.out.println("Nome do jogador: "+player.nomePlayer(i));
             System.out.println("Altura do jogador: "+player.altura(i));
@@ -399,6 +400,8 @@ public class TelaTabela {
             System.out.println("Rebotes por jogo: "+player.RPG(i));
             System.out.println("Assistências por jogo: "+player.APG(i));
             System.out.println("True Shooting: "+player.TS(i));
+            System.out.println("");
+            System.out.println("-----------------------------------------------------------");
         }
     }
     

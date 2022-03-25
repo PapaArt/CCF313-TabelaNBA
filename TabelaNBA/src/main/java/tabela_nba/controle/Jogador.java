@@ -20,7 +20,6 @@ public class Jogador {
 
     public void preencherBanco() throws SQLException{
         player.inserirJogadores();
-        System.out.println("Banco preenchido com sucesso!!!");
     }
     
     public void jogadoresMVP() throws SQLException {
@@ -35,13 +34,12 @@ public class Jogador {
         }
         conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nba", "root", "password");
         ResultSet rsJogador = conexao.createStatement().executeQuery("SELECT * FROM jogadores");
-
+        System.out.println("");
+        System.out.println("MVP");
         while (rsJogador.next()) {
             if (Integer.parseInt(rsJogador.getString("MVP")) != 0) {
-                System.out.println("Jogadores que já foram MVP: " + rsJogador.getString("nomeJogador"));
+                System.out.println("" + rsJogador.getString("nomeJogador"));
                 System.out.println("Número de premiações: " + rsJogador.getString("MVP"));
-            } else {
-                System.out.println("Jogador nunca foi MVP!");
             }
         }
 
@@ -59,14 +57,13 @@ public class Jogador {
         }
         conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nba", "root", "password");
         ResultSet rsJogador = conexao.createStatement().executeQuery("SELECT * FROM jogadores");
-
+        System.out.println("");
+        System.out.println("All Star");
         while (rsJogador.next()) {
             if (Integer.parseInt(rsJogador.getString("allStar")) != 0) {
-                System.out.println("Jogadores que já jogaram o All-Star: " + rsJogador.getString("nomeJogador"));
+                System.out.println("" + rsJogador.getString("nomeJogador"));
                 System.out.println("Número de partidas jogadas: " + rsJogador.getString("allStar"));
-            } else {
-                System.out.println("Jogador nunca foi escolhido para o All-Star game!");
-            }
+            } 
         }
     }
 
@@ -82,13 +79,12 @@ public class Jogador {
         }
         conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nba", "root", "password");
         ResultSet rsJogador = conexao.createStatement().executeQuery("SELECT * FROM jogadores");
-
+        System.out.println("");
+        System.out.println("Melhores da Final");
         while (rsJogador.next()) {
             if (Integer.parseInt(rsJogador.getString("finalMVP")) != 0) {
-                System.out.println("Jogadores que foram o melhor em uma final da NBA: " + rsJogador.getString("nomeJogador"));
+                System.out.println("" + rsJogador.getString("nomeJogador"));
                 System.out.println("Número de premiações: " + rsJogador.getString("finalMVP"));
-            } else {
-                System.out.println("Jogador não foi o melhor da final ou nunca jogou uma!");
             }
         }
     }
@@ -105,13 +101,12 @@ public class Jogador {
         }
         conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nba", "root", "password");
         ResultSet rsJogador = conexao.createStatement().executeQuery("SELECT * FROM jogadores");
-
+        System.out.println("");
+        System.out.println("Ganhadores da NBA");
         while (rsJogador.next()) {
             if (Integer.parseInt(rsJogador.getString("titulosNBA")) != 0) {
-                System.out.println("Jogadores que já ganharam a NBA: " + rsJogador.getString("nomeJogador"));
+                System.out.println("" + rsJogador.getString("nomeJogador"));
                 System.out.println("Quantidade de títulos: " + rsJogador.getString("titulosNBA"));
-            } else {
-                System.out.println("Jogador nunca ganhou a NBA!");
             }
         }
     }

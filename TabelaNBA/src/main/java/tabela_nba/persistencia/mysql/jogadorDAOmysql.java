@@ -34,7 +34,6 @@ public class jogadorDAOmysql{
         }
         conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nba", "root", "password");
         ResultSet rsJogador = conexao.createStatement().executeQuery("SELECT * FROM jogadores");
-        System.out.println("Lendo banco!");
         while (rsJogador.next()) {
             listaPlayers.add(new jogadorModelo(Integer.parseInt(rsJogador.getString("idPlayer")), rsJogador.getString("nomeJogador"), Double.parseDouble(rsJogador.getString("altura")), Double.parseDouble(rsJogador.getString("peso")), Double.parseDouble(rsJogador.getString("PPG")), Double.parseDouble(rsJogador.getString("RPG")), Double.parseDouble(rsJogador.getString("APG")), Double.parseDouble(rsJogador.getString("trueShooting"))));
         }
