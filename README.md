@@ -45,4 +45,4 @@ Para execução do projeto, é necessário utilizar o banco de dados, alterar o 
 
 Diferentemente dos times e da tabela a classe para os jogadores foi criada apenas com o intuito estatístico e não há nenhuma inserção de dados vindo do usuário.
 
-Sendo assim, teremos apenas os dados de pontuações para os jogadores e outros atributos como
+Sendo assim, teremos apenas os dados de pontuações para os jogadores e outros atributos como MVP e título da NBA.
