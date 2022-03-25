@@ -196,8 +196,16 @@ public class TelaTabela {
         qtd = scan.nextInt();
 
         for (int i = 0; i < qtd; i++) {
-            System.out.println("Insira o nome do time: ");
-            nomeTime = in.nextLine();
+            continua = true;
+            do {
+                System.out.println("Insira o nome do time: ");
+                nomeTime = in.nextLine();
+                if(nomeTime != null){
+                    continua = false;
+                }else{
+                    System.err.println("ERRO!!! Insira um nome válido");
+                }
+            } while (continua);
             do {
                 System.out.println("Insira a conferencia do time: ");
                 conferenciaTime = in.nextLine();
@@ -208,7 +216,7 @@ public class TelaTabela {
                     System.err.println("ERRO!!! Insira uma conferencia válida!!! Válidas -> LESTE e OESTE. Em maiúsculo");
                 }
             } while (continua);
-            
+
             if ("LESTE".equals(conferenciaTime)) {
                 continua = true;
                 do {
@@ -222,6 +230,7 @@ public class TelaTabela {
                         System.out.println("");
                         System.err.println("ERRO!!! Insira uma divisão válida!!! \n"
                                 + "Validos-> ATLANTICO, CENTRAL e SUDESTE. Em maiúsculo");
+                        System.out.println("");
                     }
                 } while (continua);
             } else {
@@ -237,6 +246,7 @@ public class TelaTabela {
                         System.out.println("");
                         System.err.println("ERRO!!! Insira uma divisão válida!!! \n"
                                 + "Validos-> NOROESTE, PACIFICO e SUDOESTE. Em maiúsculo");
+                        System.out.println("");
                     }
                 } while (continua);
             }
