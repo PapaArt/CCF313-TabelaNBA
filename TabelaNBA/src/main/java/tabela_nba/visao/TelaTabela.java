@@ -390,8 +390,67 @@ public class TelaTabela {
     public void telaJogadores(){
         System.out.println("");
         System.out.println("-------------------------- JOGADORES --------------------------");
-        for(int i = 0; i < 4; i++){
-            System.out.println("Id do jogador: "+player.);
+        for(int i = 0; i < 5; i++){
+            System.out.println("Id do jogador: "+i);
+            System.out.println("Nome do jogador: "+player.nomePlayer(i));
+            System.out.println("Altura do jogador: "+player.altura(i));
+            System.out.println("Peso do jogador: "+player.peso(i));
+            System.out.println("Pontuação por jogo: "+player.PPG(i));
+            System.out.println("Rebotes por jogo: "+player.RPG(i));
+            System.out.println("Assistências por jogo: "+player.APG(i));
+            System.out.println("True Shooting: "+player.TS(i));
+        }
+    }
+    
+    public void menuJogadores(){
+        System.out.println("");
+        System.out.println("-------------------------- MENU JOGADOR --------------------------");
+        System.out.println("1 - Visualizar dados dos jogadores");
+        System.out.println("2 - MVP's");
+        System.out.println("3 - All-Star games");
+        System.out.println("4 - MVP's da final");
+        System.out.println("5 - Campeões da NBA");
+        System.out.println("6 - Sair");
+    }
+    
+    public void menuJogadores2() throws SQLException{
+        boolean continuar = true;
+        int opcao;
+        Scanner scan = new Scanner(System.in);
+        while (true) {
+            menuJogadores();
+            System.out.print("Opção desejada: ");
+            do {
+                try {
+                    opcao = scan.nextInt();
+
+                    switch (opcao) {
+                        case 1:
+                            telaJogadores();
+                            break;
+                        case 2:
+                            player.jogadoresMVP();
+                            break;
+                        case 3:
+                            player.gamesAllStar();
+                            break;
+                        case 4:
+                            player.melhorDaFinal();
+                            break;
+                        case 5:
+                            player.titulosNBA();
+                            break;
+                        case 6:
+                            System.exit(0);
+                        default:
+                            System.err.println("ERRO! Essa opção é inválida");
+                    }
+                    continuar = false;
+                } catch (InputMismatchException inputMismatchException) {
+                    System.err.println("ERRO! Insira um valor inteiro");
+                    scan.nextLine();
+                }
+            } while (continuar);
         }
     }
 
@@ -423,7 +482,7 @@ public class TelaTabela {
                             tabelaPessoal();
                             break;
                         case 3:
-                            
+                            menuJogadores2();
                             break;
                         case 4:
                             System.exit(0);
