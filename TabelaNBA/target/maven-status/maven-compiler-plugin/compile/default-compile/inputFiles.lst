@@ -1,11 +1,12 @@
+/home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/persistencia/mysql/jogadorDAOmysql.java
 /home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/modelo/Time.java
 /home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/Principal.java
+/home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/controle/Jogador.java
 /home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/persistencia/local/TimeDAO.java
 /home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/persistencia/interfac/ITabelaDAO.java
 /home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/persistencia/local/TabelaDAO.java
 /home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/persistencia/interfac/ITimeDAO.java
 /home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/visao/TelaTabela.java
-/home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/persistencia/local/BDLocalSingleton.java
-/home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/persistencia/mysql/TimeDAOmysql.java
-/home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/controle/tabela_NBA.java
 /home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/controle/TabelaNBA.java
+/home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/modelo/jogadorModelo.java
+/home/vinicius/Documentos/GitHub/CCF313-TabelaNBA/TabelaNBA/src/main/java/tabela_nba/persistencia/interfac/IJogadorDAO.java
