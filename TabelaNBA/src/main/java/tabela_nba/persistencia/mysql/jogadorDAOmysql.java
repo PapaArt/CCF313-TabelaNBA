@@ -1,59 +1,73 @@
 
 package tabela_nba.persistencia.mysql;
 
-import tabela_nba.persistencia.interfac.IJogadorDAO;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import tabela_nba.modelo.jogadorModelo;
 
 /**
  *
  * @author artur
  */
-public class jogadorDAOmysql implements IJogadorDAO{
+public class jogadorDAOmysql{
 
-    @Override
-    public String getName() {
-        
-        return null;
-        
+    private final ArrayList<jogadorModelo> listaPlayers;
+    
+    public jogadorDAOmysql() {
+        listaPlayers = new ArrayList();
     }
 
-    @Override
-    public double getAltura() {
-        return 0;
+    public void addPlayer(jogadorModelo p){
+        listaPlayers.add(p);
+    }
+    
+    public void inserirJogadores() throws SQLException{
+        Connection conexao = null;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Driver não localizado!!!");
+        }
+        conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nba", "root", "password");
+        ResultSet rsJogador = conexao.createStatement().executeQuery("SELECT * FROM jogadores");
+
+        while (rsJogador.next()) {
+            listaPlayers.add(new jogadorModelo(Integer.parseInt(rsJogador.getString("idPlayer")), rsJogador.getString("nomeJogador"), Double.parseDouble(rsJogador.getString("altura")), Double.parseDouble(rsJogador.getString("peso")), Double.parseDouble(rsJogador.getString("PPG")), Double.parseDouble(rsJogador.getString("RPG")), Double.parseDouble(rsJogador.getString("APG")), Double.parseDouble(rsJogador.getString("trueShooting"))));
+        }
+    }
+    
+    
+    
+    public String nomePlayer(int id) {
+        return listaPlayers.get(id).getName();
     }
 
-    @Override
-    public double peso() {
-        
-        return 0;
-        
+    public double altura(int id) {
+        return listaPlayers.get(id).getAltura();
     }
 
-    @Override
-    public double getPPG() {
-        
-        return 0;
-        
+    public double peso(int id) {
+        return listaPlayers.get(id).peso();
     }
 
-    @Override
-    public double getRPG() {
-        
-        return 0;
-        
+    public double PPG(int id) {
+        return listaPlayers.get(id).getPPG();
     }
 
-    @Override
-    public double getAPG() {
-        
-        return 0;
-        
+    public double RPG(int id) {
+        return listaPlayers.get(id).getRPG();
     }
 
-    @Override
-    public double getTS() {
-        
-        return 0;
-        
+    public double APG(int id) {
+        return listaPlayers.get(id).getAPG();
+    }
+
+    public double TS(int id) {
+        return listaPlayers.get(id).getTS();
     }
     
     
