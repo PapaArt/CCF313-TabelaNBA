@@ -60,10 +60,11 @@ public class TelaTabela {
             conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nba", "root", "password");
             //Consulta SQL feita aqui
             ResultSet rsTabela = conexao.createStatement().executeQuery("SELECT * FROM times");
-            LOGGER.info("Inserindo times.");
+            LOGGER.info("Iniciando inserção de times");
             while (rsTabela.next()) {
                 if ("LESTE".equals(rsTabela.getString("conf"))) {
                     if ("ATLANTICO".equals(rsTabela.getString("divi"))) {
+                        LOGGER.info("Inserindo times da conferencia leste - atlantico");
                         tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
                                 Time.conferenciaTime.LESTE, Time.divisao.ATLANTICO,
                                 Integer.parseInt(rsTabela.getString("idTime"))));
@@ -76,9 +77,10 @@ public class TelaTabela {
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
                         ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
-
+                        LOGGER.info("Inserindo times da conferencia norte - atlantico finalizada");
                     }
                     if ("CENTRAL".equals(rsTabela.getString("divi"))) {
+                        LOGGER.info("Inserindo times da conferencia leste - central");
                         tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
                                 Time.conferenciaTime.LESTE, Time.divisao.CENTRAL,
                                 Integer.parseInt(rsTabela.getString("idTime"))));
@@ -91,8 +93,10 @@ public class TelaTabela {
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
                         ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
+                        LOGGER.info("Inserindo times da conferencia leste - central finalizada");
                     }
                     if ("SUDESTE".equals(rsTabela.getString("divi"))) {
+                        LOGGER.info("Inserindo times da conferencia leste - sudeste");
                         tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
                                 Time.conferenciaTime.LESTE, Time.divisao.SUDESTE,
                                 Integer.parseInt(rsTabela.getString("idTime"))));
@@ -105,10 +109,12 @@ public class TelaTabela {
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
                         ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
+                        LOGGER.info("Inserindo times da conferencia leste - sudeste finalizada");
                     }
 
                 } else if ("OESTE".equals(rsTabela.getString("conf"))) {
                     if ("NOROESTE".equals(rsTabela.getString("divi"))) {
+                        LOGGER.info("Inserindo times da conferencia oeste - noroeste");
                         tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
                                 Time.conferenciaTime.OESTE, Time.divisao.NOROESTE,
                                 Integer.parseInt(rsTabela.getString("idTime"))));
@@ -121,8 +127,10 @@ public class TelaTabela {
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
                         ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
+                        LOGGER.info("Inserindo times da conferencia oeste - noroeste finalizada");
                     }
                     if ("PACIFICO".equals(rsTabela.getString("divi"))) {
+                        LOGGER.info("Inserindo times da conferencia oeste - pacifico");
                         tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
                                 Time.conferenciaTime.OESTE, Time.divisao.PACIFICO,
                                 Integer.parseInt(rsTabela.getString("idTime"))));
@@ -135,8 +143,10 @@ public class TelaTabela {
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
                         ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
+                        LOGGER.info("Inserindo times da conferencia oeste - pacifico finalizada");
                     }
                     if ("SUDOESTE".equals(rsTabela.getString("divi"))) {
+                        LOGGER.info("Inserindo times da conferencia oeste - sudoeste");
                         tabela.listaTabelas.addTime(new Time(rsTabela.getString("nomeTime"),
                                 Time.conferenciaTime.OESTE, Time.divisao.SUDOESTE,
                                 Integer.parseInt(rsTabela.getString("idTime"))));
@@ -149,14 +159,17 @@ public class TelaTabela {
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setJogos(game);
                         ppj = Double.parseDouble(rsTabela.getString("pontosPorJogo"));
                         tabela.listaTabelas.listaTimes.get(Integer.parseInt(rsTabela.getString("idTime"))).setPontosPorJogo(ppj);
+                        LOGGER.info("Inserindo times da conferencia oeste - pacifico finalizada");
                     }
                 }
                 LOGGER.info("Times adicionados.");
             }
             ResultSet rsTabela1 = conexao.createStatement().executeQuery("SELECT periodo FROM times");
+            LOGGER.info("Busca pelo ano da tabela");
             while (rsTabela1.next()) {
                 anoTabela = rsTabela1.getString("periodo");
             }
+            LOGGER.info("Ano da tabela definido");
         } catch (ClassNotFoundException ex) {
             System.out.println("Driver do banco não localizado!!!");
         } catch (SQLException ex) {
@@ -256,6 +269,7 @@ public class TelaTabela {
             if ("LESTE".equals(conferenciaTime)) {
 
                 if ("ATLANTICO".equals(divisaoTime)) {
+                    LOGGER.info("Inserindo times da conferencia leste - atlantico / interação user");
                     tabela.listaTabelas.addTime(new Time(nomeTime,
                             Time.conferenciaTime.LESTE, Time.divisao.ATLANTICO,
                             idTime));
@@ -274,8 +288,10 @@ public class TelaTabela {
                     ppj = Double.valueOf(pontosPorJogo);
                     tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
                     idTime += 1;
+                    LOGGER.info("Inserindo times da conferencia leste - atlantico / interação user concluida");
                 }
                 if ("CENTRAL".equals(divisaoTime)) {
+                    LOGGER.info("Inserindo times da conferencia leste - central / interação user");
                     tabela.listaTabelas.addTime(new Time(nomeTime,
                             Time.conferenciaTime.LESTE, Time.divisao.CENTRAL,
                             idTime));
@@ -294,8 +310,10 @@ public class TelaTabela {
                     ppj = Double.valueOf(pontosPorJogo);
                     tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
                     idTime += 1;
+                    LOGGER.info("Inserindo times da conferencia leste - central / interação user concluida");
                 }
                 if ("SUDESTE".equals(divisaoTime)) {
+                    LOGGER.info("Inserindo times da conferencia leste - sudeste / interação user");
                     tabela.listaTabelas.addTime(new Time(nomeTime,
                             Time.conferenciaTime.LESTE, Time.divisao.SUDESTE,
                             idTime));
@@ -314,11 +332,13 @@ public class TelaTabela {
                     ppj = Double.valueOf(pontosPorJogo);
                     tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
                     idTime += 1;
+                    LOGGER.info("Inserindo times da conferencia leste - sudeste / interação user concluido");
                 }
 
             } else if ("OESTE".equals(conferenciaTime)) {
 
                 if ("NOROESTE".equals(divisaoTime)) {
+                    LOGGER.info("Inserindo times da conferencia oeste - noroeste / interação user");
                     tabela.listaTabelas.addTime(new Time(nomeTime,
                             Time.conferenciaTime.OESTE, Time.divisao.NOROESTE,
                             idTime));
@@ -337,8 +357,10 @@ public class TelaTabela {
                     ppj = Double.valueOf(pontosPorJogo);
                     tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
                     idTime += 1;
+                    LOGGER.info("Inserindo times da conferencia oeste - noroeste / interação user concluido");
                 }
                 if ("PACIFICO".equals(divisaoTime)) {
+                    LOGGER.info("Inserindo times da conferencia oeste - pacifico / interação user");
                     tabela.listaTabelas.addTime(new Time(nomeTime,
                             Time.conferenciaTime.OESTE, Time.divisao.PACIFICO,
                             idTime));
@@ -357,8 +379,10 @@ public class TelaTabela {
                     ppj = Double.valueOf(pontosPorJogo);
                     tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
                     idTime += 1;
+                    LOGGER.info("Inserindo times da conferencia oeste - pacifico / interação user concludo");
                 }
                 if ("SUDOESTE".equals(divisaoTime)) {
+                    LOGGER.info("Inserindo times da conferencia oeste - sudoeste / interação user");
                     tabela.listaTabelas.addTime(new Time(nomeTime,
                             Time.conferenciaTime.OESTE, Time.divisao.SUDOESTE,
                             idTime));
@@ -377,6 +401,7 @@ public class TelaTabela {
                     ppj = Double.valueOf(pontosPorJogo);
                     tabela.listaTabelas.listaTimes.get(idTime).setPontosPorJogo(ppj);
                     idTime += 1;
+                    LOGGER.info("Inserindo times da conferencia oeste - sudoeste / interação user concluido");
                 }
 
             }

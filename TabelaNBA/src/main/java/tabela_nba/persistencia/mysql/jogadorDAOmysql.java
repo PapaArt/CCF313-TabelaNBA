@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
 import tabela_nba.modelo.jogadorModelo;
 
 /**
@@ -13,7 +14,7 @@ import tabela_nba.modelo.jogadorModelo;
  * @author artur
  */
 public class jogadorDAOmysql{
-
+    private static final Logger LOGGER = Logger.getLogger("NBALogger");
     private final ArrayList<jogadorModelo> listaPlayers;
     
     public jogadorDAOmysql() {
@@ -26,7 +27,7 @@ public class jogadorDAOmysql{
     
     public void inserirJogadores() throws SQLException{
         Connection conexao = null;
-
+        LOGGER.info("Tentando conexão com Banco de Jogadores.");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
@@ -37,6 +38,7 @@ public class jogadorDAOmysql{
         while (rsJogador.next()) {
             listaPlayers.add(new jogadorModelo(Integer.parseInt(rsJogador.getString("idPlayer")), rsJogador.getString("nomeJogador"), Double.parseDouble(rsJogador.getString("altura")), Double.parseDouble(rsJogador.getString("peso")), Double.parseDouble(rsJogador.getString("PPG")), Double.parseDouble(rsJogador.getString("RPG")), Double.parseDouble(rsJogador.getString("APG")), Double.parseDouble(rsJogador.getString("trueShooting"))));
         }
+        LOGGER.info("Conexão realizada");
     }
     
     

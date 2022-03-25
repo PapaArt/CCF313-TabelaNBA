@@ -10,6 +10,7 @@ import tabela_nba.visao.TelaTabela;
 public class Principal {
     public static void main(String[] args) throws SQLException {
         TelaTabela tela = new TelaTabela();
+        
 
 //        tela.telaInserirBanco();
 //        tela.listarClassificacao();
