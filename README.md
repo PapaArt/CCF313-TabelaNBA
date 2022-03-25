@@ -31,7 +31,7 @@ A realização do projeto se fez possível através da utilização de um banco 
 
 A primeira, possui os mesmos parâmetros de criação vistos no construtor de Time, citado acima. A segunda, o construtor dos jogadores e a terceira é responsável por indicar o período que a tabela representa.
 
-<img align="center" alt="bancoTime" height="230" width="400" src="https://cdn.discordapp.com/attachments/885924523025780760/956747485735448606/Captura_de_tela_de_2022-03-24_23-50-53.png">
+<img align="center" alt="bancoTime" height="200" width="400" src="https://cdn.discordapp.com/attachments/885924523025780760/956747485735448606/Captura_de_tela_de_2022-03-24_23-50-53.png">
 
 
 Foi desenvolvido no MySQL versão 8.0.25 build 788958.
@@ -46,3 +46,11 @@ Para execução do projeto, é necessário utilizar o banco de dados, alterar o 
 Diferentemente dos times e da tabela a classe para os jogadores foi criada apenas com o intuito estatístico e não há nenhuma inserção de dados vindo do usuário.
 
 Sendo assim, teremos apenas os dados de pontuações para os jogadores e outros atributos como MVP e título da NBA.
+
+<img align="center" alt="maiorDaHistoria" height="230" width="400" src="https://cdn.discordapp.com/attachments/820488141810696197/956745513338814544/basketball-player.png">
+
+
+
+
+# PARA EXECUÇÃO DO PROJETO:
+## java -jar "titulo_do_arquivo"
