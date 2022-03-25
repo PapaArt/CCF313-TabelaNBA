@@ -40,8 +40,7 @@ public class jogadorDAOmysql{
         }
     }
     
-    
-    
+
     public String nomePlayer(int id) {
         return listaPlayers.get(id).getName();
     }
