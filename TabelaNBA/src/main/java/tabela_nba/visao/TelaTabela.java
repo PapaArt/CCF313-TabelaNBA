@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
+import tabela_nba.controle.Jogador;
 import static tabela_nba.controle.TabelaNBA.conferencia;
 import tabela_nba.modelo.Time;
 import tabela_nba.persistencia.local.TabelaDAO;
@@ -20,6 +21,7 @@ import tabela_nba.persistencia.local.TabelaDAO;
 public class TelaTabela {
 
     TabelaDAO tabela = new TabelaDAO(conferencia.GERAL);
+    private Jogador player;
     private static final Logger LOGGER = Logger.getLogger("NBALogger");
 
     private String anoTabela;
@@ -374,13 +376,22 @@ public class TelaTabela {
         anoTabela = String.valueOf(current_date.getYear());
         listarClassificacao();
     }
+    
+    public void telaJogadores(){
+        System.out.println("");
+        System.out.println("-------------------------- JOGADORES --------------------------");
+        for(int i = 0; i < 4; i++){
+            System.out.println("Id do jogador: "+player.);
+        }
+    }
 
     public void menuInicial() {
         System.out.println("");
         System.out.println("-------------------------- MENU --------------------------");
         System.out.println("1 - Visualizar tabelas reais");
         System.out.println("2 - Criar sua própria tabela");
-        System.out.println("3 - Sair");
+        System.out.println("3 - Visualizar jogadores");
+        System.out.println("4 - Sair");
     }
 
     public void menuDois() throws SQLException {
@@ -402,6 +413,9 @@ public class TelaTabela {
                             tabelaPessoal();
                             break;
                         case 3:
+                            
+                            break;
+                        case 4:
                             System.exit(0);
                         default:
                             System.err.println("ERRO! Essa opção é inválida");
