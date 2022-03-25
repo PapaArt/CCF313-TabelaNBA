@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import tabela_nba.persistencia.mysql.jogadorDAOmysql;
 
 /**
@@ -20,6 +18,11 @@ public class Jogador {
         player = new jogadorDAOmysql();
     }
 
+    public void preencherBanco() throws SQLException{
+        player.inserirJogadores();
+        System.out.println("Banco preenchido com sucesso!!!");
+    }
+    
     public void jogadoresMVP() throws SQLException {
         player.inserirJogadores();
 
@@ -70,7 +73,7 @@ public class Jogador {
     public void melhorDaFinal() throws SQLException {
         player.inserirJogadores();
 
-        Connection conexao = null;
+        Connection conexao;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -93,7 +96,7 @@ public class Jogador {
     public void titulosNBA() throws SQLException {
         player.inserirJogadores();
 
-        Connection conexao = null;
+        Connection conexao;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -113,7 +116,7 @@ public class Jogador {
         }
     }
 
-    public String nomePlayer(int id) {
+    public String nomePlayer(int id){
         return player.nomePlayer(id);
     }
 

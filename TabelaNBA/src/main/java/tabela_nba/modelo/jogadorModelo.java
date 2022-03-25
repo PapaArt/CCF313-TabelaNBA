@@ -31,7 +31,7 @@ public class jogadorModelo implements IJogadorDAO{
         this.APG = APG;
         this.TS = TS;
     }
-
+    
     @Override
     public String getName() {
         return this.nomeJog;

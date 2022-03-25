@@ -387,7 +387,7 @@ public class TelaTabela {
         listarClassificacao();
     }
     
-    public void telaJogadores(){
+    public void telaJogadores() throws SQLException{
         System.out.println("");
         System.out.println("-------------------------- JOGADORES --------------------------");
         for(int i = 0; i < 5; i++){
@@ -402,7 +402,8 @@ public class TelaTabela {
         }
     }
     
-    public void menuJogadores(){
+    public void menuJogadores() throws SQLException{
+        player.preencherBanco();
         System.out.println("");
         System.out.println("-------------------------- MENU JOGADOR --------------------------");
         System.out.println("1 - Visualizar dados dos jogadores");
